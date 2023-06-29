@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   setupFiles: ["<rootDir>/src/__mocks__/setup.js"],
   collectCoverage: true,
   coverageDirectory: "coverage",

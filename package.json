@@ -2,19 +2,31 @@
   "name": "react-ui",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/bundle.cjs.js",
+  "main": "dist/bundle.umd.js",
   "module": "dist/bundle.esm.js",
   "types": "dist/index.d.ts",
+  "type": "module",
   "scripts": {
     "format": "prettier  --loglevel warn --write \"./**/*.{js,jsx,ts,tsx,css,md,json}\" ",
-    "lint": "npm run format && eslint . --ext .jsx,.js,.ts,.tsx --quiet --fix",
+    "lint": "eslint . --ext .jsx,.js,.ts,.tsx --quiet --fix",
     "build": "rollup -c --bundleConfigAsCjs",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "test": "npm run lint && jest"
+    "test": "jest"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Jon Watkins",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "dependencies": {
+    "classnames": "^2.3.2",
+    "prop-types": "^15.8.1"
+  },
   "devDependencies": {
     "@babel/preset-env": "^7.22.5",
     "@babel/preset-react": "^7.22.5",
@@ -46,9 +58,6 @@
     "jest-environment-jsdom": "^29.5.0",
     "node-sass": "^9.0.0",
     "prettier": "^2.8.8",
-    "prop-types": "^15.8.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "rimraf": "^5.0.1",
     "rollup": "^3.25.3",
     "rollup-plugin-dts": "^5.3.0",
@@ -58,9 +67,6 @@
     "storybook": "^7.0.24",
     "tslib": "^2.6.0",
     "typescript": "^5.1.6"
-  },
-  "dependencies": {
-    "classnames": "^2.3.2"
   },
   "overrides": {
     "@typescript-eslint/typescript-estree": "^5.60.1"

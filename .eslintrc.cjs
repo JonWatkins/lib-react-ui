@@ -31,7 +31,6 @@ module.exports = {
   ],
   plugins: ["prettier"],
   rules: {
-    "linebreak-style": ["error", "windows"],
     "prettier/prettier": ["error", {}, { usePrettierrc: true }],
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/no-empty-function": "off",
