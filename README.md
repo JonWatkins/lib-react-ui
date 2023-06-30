@@ -2,8 +2,25 @@
 
 (WIP) Lib React UI
 
-#Installation
+## Installation
 
+You can use `lib-react-ui` as a package on `npm`
+
+```bash
+npm install lib-react-ui@latest
 ```
-npm i lib-react-ui
+
+## Getting started with Lib React UI
+
+```js
+import * as React from 'react';
+import { Button } from 'lib-react-ui';
+
+function App() {
+  return <Button color="primary">Hello World</Button>;
+}
 ```
+
+## Contributing
+
+Read the [contributing guide](/.github/CONTRIBUTING.md) to learn about our development process, how to propose bug fixes and improvements, and how to build and test your changes.
