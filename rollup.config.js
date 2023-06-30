@@ -7,13 +7,6 @@ import terser from "@rollup/plugin-terser";
 import PeerDepsExternalPlugin from "rollup-plugin-peer-deps-external";
 import packageJson from "./package.json";
 
-const snakeToCamel = (str) =>
-  str
-    .toLowerCase()
-    .replace(/([-_][a-z])/g, (group) =>
-      group.toUpperCase().replace("-", "").replace("_", "")
-    );
-
 const external = ["react", "react-dom"];
 
 const plugins = [
@@ -39,8 +32,7 @@ export default [
     output: [
       {
         file: packageJson.main,
-        name: snakeToCamel(packageJson.name),
-        format: "umd",
+        format: "cjs",
         sourcemap: true,
       },
     ],
@@ -52,7 +44,6 @@ export default [
     output: [
       {
         file: packageJson.module,
-        name: snakeToCamel(packageJson.name),
         format: "esm",
         sourcemap: true,
       },

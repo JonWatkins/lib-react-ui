@@ -12,3 +12,5 @@ export type ThemeColors =
   | "white";
 
 export type ThemeSizes = "sm" | "md" | "lg";
+
+export type ChildNodes = string | JSX.Element | JSX.Element[];

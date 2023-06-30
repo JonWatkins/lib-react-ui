@@ -18,6 +18,11 @@ describe("Button", () => {
     expect(onClick).toHaveBeenCalled();
   });
 
+  it("should accept extra classes", () => {
+    render(<Button className="pt-5" />);
+    expect(screen.getByRole("button")).toHaveClass("pt-5");
+  });
+
   global.colors.forEach((color) => {
     it(`should be able to set the type of the button to ${color}`, () => {
       render(<Button color={color as ThemeColors} />);

@@ -21,4 +21,9 @@ describe("Input", () => {
     userEvent.type(input, "Hello World!");
     await waitFor(() => expect(input.value).toBe("Hello World!"));
   });
+
+  it("should be able to render a label", async () => {
+    render(<Input label="Enter Your Email" />);
+    expect(screen.getByText("Enter Your Email").nodeName).toBe("LABEL");
+  });
 });

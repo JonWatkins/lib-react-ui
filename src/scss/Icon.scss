@@ -1,0 +1,26 @@
+.icon {
+  font-size: 1em;
+  line-height: 1;
+  text-rendering: auto;
+  font-style: normal;
+  font-variant: normal;
+  -webkit-font-smoothing: antialiased;
+
+  &-sm {
+    font-size: 1em;
+  }
+
+  &-md {
+    font-size: 2em;
+  }
+
+  &-lg {
+    font-size: 3em;
+  }
+
+  @each $name, $value in $icons {
+    &-#{$name}::before {
+      content: $value;
+    }
+  }
+}

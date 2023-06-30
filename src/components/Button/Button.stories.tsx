@@ -10,9 +10,11 @@ const meta: Meta<typeof Button> = {
   argTypes: {},
 };
 
-export const Primary: Story = (args) => <Button id="test-button" {...args} />;
+export const Default: Story = (args) => (
+  <Button className="mt-5" id="test-button" {...args} />
+);
 
-Primary.args = {
+Default.args = {
   disabled: false,
   text: "Hello World",
   color: "dark",

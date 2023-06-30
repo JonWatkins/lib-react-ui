@@ -10,10 +10,26 @@ const meta: Meta<typeof Input> = {
   argTypes: {},
 };
 
-export const Primary: Story = (args) => <Input id="test-input" {...args} />;
+export const Default: Story = (args) => <Input id="test-input" {...args} />;
 
-Primary.args = {
-  label: "Primary",
+Default.args = {};
+
+export const Label: Story = (args) => <Input id="test-input" {...args} />;
+
+Label.args = {
+  label: "Enter your name",
+};
+
+export const Placeholder: Story = (args) => <Input id="test-input" {...args} />;
+
+Placeholder.args = {
+  placeholder: "Enter your name",
+};
+
+export const Disabled: Story = (args) => <Input id="test-input" {...args} />;
+
+Disabled.args = {
+  disabled: true,
 };
 
 export default meta;

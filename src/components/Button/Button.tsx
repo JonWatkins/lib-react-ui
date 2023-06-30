@@ -7,15 +7,11 @@ export const Button: FC<ButtonProps> = ({
   color = "primary",
   disabled,
   text,
+  className,
   onClick,
   ...props
 }) => {
-  const classes = {
-    btn: true,
-    [`btn-${size}`]: true,
-    [`btn-${color}`]: true,
-  };
-
+  const classes = ["btn", `btn-${size}`, `btn-${color}`, className];
   return (
     <button
       className={classNames(classes)}

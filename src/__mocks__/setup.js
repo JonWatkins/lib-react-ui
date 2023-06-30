@@ -11,4 +11,5 @@ global.colors = [
   "muted",
   "white",
 ];
+
 global.sizes = ["sm", "md", "lg"];

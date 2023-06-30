@@ -6,5 +6,6 @@ export interface ButtonProps {
   disabled?: boolean;
   color?: ThemeColors;
   size?: ThemeSizes;
+  className?: string;
   onClick?: MouseEventHandler<HTMLButtonElement>;
 }
