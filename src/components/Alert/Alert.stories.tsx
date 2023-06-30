@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import { Alert } from "./Alert";
-import { ThemeColors, ThemeSizes } from "../../globals";
+import { ThemeColors } from "../../globals";
 
 type Story = StoryObj<typeof Alert>;
 

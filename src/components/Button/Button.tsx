@@ -6,7 +6,7 @@ export const Button: FC<ButtonProps> = ({
   size = "sm",
   color = "primary",
   type = "button",
-  disabled,
+  disabled = false,
   text,
   className,
   onClick,
