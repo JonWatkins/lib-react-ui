@@ -28,44 +28,35 @@
 	font-size: 1.25rem;
 }
 
+@mixin text-color($val) {
+  @if ($val == 'light') {
+    color: var(--dark-color);
+  }
+  @else if ($val == 'white') {
+    color: var(--dark-color);
+  }
+  @else if ($val == 'muted') {
+    color: var(--dark-color);
+  }
+  @else if ($val == 'lightest') {
+    color: var(--dark-color);
+  }
+  @else {
+    color: var(--white-color);
+  }
+}
+
 @each $type, $class in $theme-colors {
 	.btn-#{$type} {
 		background-color: $class;
-		color: var(--white-color);
 		border-color: $class;
+    @include text-color($type);
 
 		&:hover,
 		&:focus,
 		&:active {
 			background-color: darken($class, 15%);
 			border-color: darken($class, 15%);
-		}
-	}
-	@if ($type == "light") {
-		.btn-#{$type} {
-			background-color: $class;
-			color: var(--dark-color);
-			border-color: $class;
-
-			&:hover,
-			&:focus,
-			&:active {
-				background-color: darken($class, 15%);
-				border-color: darken($class, 15%);
-			}
-		}
-	} @else if ($type == "dark") {
-		.btn-#{$type} {
-			background-color: $class;
-			color: var(--white-color);
-			border-color: $class;
-
-			&:hover,
-			&:focus,
-			&:active {
-				background-color: lighten($class, 15%);
-				border-color: lighten($class, 15%);
-			}
 		}
 	}
 }
