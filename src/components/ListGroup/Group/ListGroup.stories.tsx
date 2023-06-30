@@ -1,6 +1,6 @@
 import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
-import { ListGroup, ListGroupItem } from "./ListGroup";
+import { ListGroup, ListGroupItem } from "..";
 import { Input } from "../../Input";
 import { Button } from "../../Button";
 
@@ -8,13 +8,14 @@ type Story = StoryObj<typeof ListGroup>;
 
 const meta: Meta<typeof ListGroup> = {
   component: ListGroup,
-  title: "Components/ListGroup",
+  title: "Components/ListGroup/ListGroup",
   tags: ["autodocs"],
   argTypes: {},
 };
 
 export const Default: Story = (args) => (
   <ListGroup>
+    <ListGroupItem>Lorem ipsum</ListGroupItem>
     <ListGroupItem>Lorem ipsum</ListGroupItem>
     <ListGroupItem>Lorem ipsum</ListGroupItem>
   </ListGroup>
@@ -31,6 +32,9 @@ export const UsingHTMLElements: Story = (args) => (
     <ListGroupItem>
       <a href="">Lorem ipsum</a>
     </ListGroupItem>
+    <ListGroupItem>
+      <a href="">Lorem ipsum</a>
+    </ListGroupItem>
   </ListGroup>
 );
 
@@ -40,6 +44,9 @@ export const UsingReactElements: Story = (args) => (
   <ListGroup>
     <ListGroupItem>
       <Input label="Enter Your Name" />
+    </ListGroupItem>
+    <ListGroupItem>
+      <Button text="Cancel" color="danger" />
     </ListGroupItem>
     <ListGroupItem>
       <Button text="Submit" />
