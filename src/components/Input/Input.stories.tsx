@@ -39,7 +39,7 @@ export const Checkbox: Story = (args) => <Input id="test-input" {...args} />;
 
 Checkbox.args = {
   type: "checkbox",
-  label: "Some checkbox"
+  label: "Some checkbox",
 };
 
 export const Label: Story = (args) => <Input id="test-input" {...args} />;
