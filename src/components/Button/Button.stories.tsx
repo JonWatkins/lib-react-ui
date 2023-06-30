@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import { Button } from "./Button";
-import { ThemeColors } from "../../globals";
+import { ThemeColors, ThemeSizes } from "../../globals";
 
 type Story = StoryObj<typeof Button>;
 
@@ -28,30 +28,6 @@ Secondary.args = {
   color: "secondary",
 };
 
-export const Small: Story = (args) => <Button id="test-button" {...args} />;
-
-Small.args = {
-  disabled: false,
-  text: "Hello World",
-  size: "sm",
-};
-
-export const Medium: Story = (args) => <Button id="test-button" {...args} />;
-
-Medium.args = {
-  disabled: false,
-  text: "Hello World",
-  size: "md",
-};
-
-export const Large: Story = (args) => <Button id="test-button" {...args} />;
-
-Large.args = {
-  disabled: false,
-  text: "Hello World",
-  size: "lg",
-};
-
 export const ButtonWithHooks: Story = () => {
   const [value, setValue] = useState("secondary");
   const [isPrimary, setIsPrimary] = useState(false);
@@ -76,6 +52,24 @@ export const ButtonWithHooks: Story = () => {
 };
 
 ButtonWithHooks.args = {};
+
+export const AvailableSizes: Story = () => {
+  const sizes: ThemeSizes[] = [
+    "sm",
+    "md",
+    "lg"
+  ]
+
+  return (
+    <>
+      {sizes.map((size, index) => (
+        <Button key={index} size={size} text={size} className="mr-4 mb-4" />
+      ))}
+    </>
+  );
+}
+
+AvailableSizes.args = {};
 
 export const AvailableColors: Story = () => {
   const colors: ThemeColors[] = [
