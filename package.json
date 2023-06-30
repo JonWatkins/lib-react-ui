@@ -12,7 +12,6 @@
     "build": "rollup -c --bundleConfigAsCjs",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "ci": "npm run lint && npm run test",
     "test": "jest"
   },
   "author": "Jon Watkins",
