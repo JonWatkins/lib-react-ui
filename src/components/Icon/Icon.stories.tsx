@@ -7,6 +7,7 @@ type Story = StoryObj<typeof Icon>;
 const meta: Meta<typeof Icon> = {
   component: Icon,
   title: "Icon",
+  tags: ["autodocs"],
   argTypes: {},
 };
 

@@ -40,3 +40,11 @@
     outline: 0;
   }
 }
+
+.checkbox-label {
+  .form-control {
+    display: inline;
+    width: auto;
+    margin-right: 5px;
+  }
+}

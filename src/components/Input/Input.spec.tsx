@@ -1,10 +1,17 @@
 import "@testing-library/jest-dom";
 import React from "react";
-import { render, screen, waitFor } from "@testing-library/react";
+import {
+  render,
+  screen,
+  waitFor,
+  queryByAttribute,
+} from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { Input } from "./Input";
 
 describe("Input", () => {
+  const getById = queryByAttribute.bind(null, "id");
+
   it("should be able to use a placeholder", () => {
     render(<Input placeholder="Enter your name" />);
     expect(screen.getByPlaceholderText("Enter your name")).toHaveAttribute(
@@ -25,5 +32,23 @@ describe("Input", () => {
   it("should be able to render a label", async () => {
     render(<Input label="Enter Your Email" />);
     expect(screen.getByText("Enter Your Email").nodeName).toBe("LABEL");
+  });
+
+  it("should be able to render a checkbox", () => {
+    const dom = render(
+      <Input id="test-input" label="i argree" type="checkbox" />
+    );
+    expect(getById(dom.container, "test-input")).toHaveAttribute(
+      "type",
+      "checkbox"
+    );
+  });
+
+  it("should be able to render a checkbox", () => {
+    const dom = render(<Input id="test-input" label="i agree" type="radio" />);
+    expect(getById(dom.container, "test-input")).toHaveAttribute(
+      "type",
+      "radio"
+    );
   });
 });
