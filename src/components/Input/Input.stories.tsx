@@ -7,12 +7,40 @@ type Story = StoryObj<typeof Input>;
 const meta: Meta<typeof Input> = {
   component: Input,
   title: "Input",
+  tags: ["autodocs"],
   argTypes: {},
 };
 
-export const Default: Story = (args) => <Input id="test-input" {...args} />;
+export const Text: Story = (args) => <Input id="test-input" {...args} />;
 
-Default.args = {};
+Text.args = {
+  type: "text",
+};
+
+export const Email: Story = (args) => <Input id="test-input" {...args} />;
+
+Email.args = {
+  type: "email",
+};
+
+export const Date: Story = (args) => <Input id="test-input" {...args} />;
+
+Date.args = {
+  type: "date",
+};
+
+export const Number: Story = (args) => <Input id="test-input" {...args} />;
+
+Number.args = {
+  type: "number",
+};
+
+export const Checkbox: Story = (args) => <Input id="test-input" {...args} />;
+
+Checkbox.args = {
+  type: "checkbox",
+  label: "Some checkbox"
+};
 
 export const Label: Story = (args) => <Input id="test-input" {...args} />;
 

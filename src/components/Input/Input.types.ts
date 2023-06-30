@@ -1,9 +1,31 @@
+import { ChildNodes } from "../../globals";
 import { ChangeEventHandler } from "react";
+
+export type InputTypes =
+  | "checkbox"
+  | "radio"
+  | "color"
+  | "date"
+  | "datetime-local"
+  | "email"
+  | "file"
+  | "hidden"
+  | "image"
+  | "month"
+  | "number"
+  | "password"
+  | "radio"
+  | "range"
+  | "search"
+  | "tel"
+  | "text"
+  | "url"
+  | "week";
 
 export interface InputProps {
   id?: string;
   label?: string;
-  type?: string;
+  type?: InputTypes;
   disabled?: boolean;
   placeholder?: string;
   className?: string;
@@ -14,4 +36,6 @@ export interface InputProps {
 export interface InputLabelProps {
   id?: string;
   label?: string;
+  children?: ChildNodes;
+  className?: string;
 }

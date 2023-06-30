@@ -9,6 +9,7 @@ type Story = StoryObj<typeof ListGroup>;
 const meta: Meta<typeof ListGroup> = {
   component: ListGroup,
   title: "ListGroup",
+  tags: ["autodocs"],
   argTypes: {},
 };
 
@@ -21,7 +22,7 @@ export const Default: Story = (args) => (
 
 Default.args = {};
 
-export const HTMLElements: Story = (args) => (
+export const UsingHTMLElements: Story = (args) => (
   <ListGroup>
     <ListGroupItem>
       <a href="">Lorem ipsum</a>
@@ -33,9 +34,9 @@ export const HTMLElements: Story = (args) => (
   </ListGroup>
 );
 
-HTMLElements.args = {};
+UsingHTMLElements.args = {};
 
-export const ReactElements: Story = (args) => (
+export const UsingReactElements: Story = (args) => (
   <ListGroup>
     <ListGroupItem>
       <Input label="Enter Your Name" />
@@ -46,6 +47,6 @@ export const ReactElements: Story = (args) => (
   </ListGroup>
 );
 
-ReactElements.args = {};
+UsingReactElements.args = {};
 
 export default meta;

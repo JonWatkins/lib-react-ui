@@ -8,6 +8,7 @@ type Story = StoryObj<typeof ButtonGroup>;
 const meta: Meta<typeof ButtonGroup> = {
   component: ButtonGroup,
   title: "ButtonGroup",
+  tags: ["autodocs"],
   argTypes: {},
 };
 

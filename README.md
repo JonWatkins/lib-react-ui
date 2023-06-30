@@ -13,13 +13,17 @@ npm install lib-react-ui@latest
 ## Getting started with Lib React UI
 
 ```js
-import * as React from 'react';
-import { Button } from 'lib-react-ui';
+import * as React from "react";
+import { Button } from "lib-react-ui";
 
 function App() {
   return <Button color="primary">Hello World</Button>;
 }
 ```
+
+## Documentation
+
+Please follow the documentation at [https://jonwatkins.github.io/lib-react-ui](https://jonwatkins.github.io/lib-react-ui).
 
 ## Contributing
 
