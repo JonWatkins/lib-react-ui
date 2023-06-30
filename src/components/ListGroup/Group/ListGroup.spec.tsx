@@ -2,13 +2,14 @@ import "@testing-library/jest-dom";
 
 import React from "react";
 import { render, screen, queryByAttribute } from "@testing-library/react";
-import { ListGroup, ListGroupItem } from "./ListGroup";
-import { Button } from "../Button";
+import { ListGroup } from "./ListGroup";
+import { ListGroupItem } from "../Item/ListGroupItem";
+import { Button } from "../../Button";
 
 describe("ListGroup", () => {
   const getById = queryByAttribute.bind(null, "id");
 
-  it("should have the btn-group class", () => {
+  it("should have the list-group class", () => {
     const dom = render(<ListGroup id="test-id" />);
     expect(getById(dom.container, "test-id")).toHaveClass("list-group");
   });

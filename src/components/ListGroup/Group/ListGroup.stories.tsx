@@ -1,8 +1,8 @@
 import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import { ListGroup, ListGroupItem } from "./ListGroup";
-import { Input } from "../Input";
-import { Button } from "../Button";
+import { Input } from "../../Input";
+import { Button } from "../../Button";
 
 type Story = StoryObj<typeof ListGroup>;
 

@@ -6,7 +6,6 @@ const config: StorybookConfig = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
-    "@a110/storybook-expand-all",
     {
       name: "@storybook/addon-styling",
       options: {
