@@ -1,4 +1,4 @@
-import React, { FC, Fragment } from "react";
+import React, { FC } from "react";
 import { InputProps, InputLabelProps } from "./Input.types";
 import classNames from "classnames";
 
@@ -13,21 +13,25 @@ export const Input: FC<InputProps> = ({
   placeholder,
   disabled,
   className,
+  type,
+  required,
   onChange,
   ...props
 }) => {
   const classes = ["form-control", className];
   return (
-    <Fragment>
+    <div className="form-field">
       <InputLabel label={label} />
       <input
         id={id}
         className={classNames(classes)}
+        type={type}
         placeholder={placeholder}
         disabled={disabled}
+        required={required}
         onChange={onChange}
         {...props}
       />
-    </Fragment>
+    </div>
   );
 };

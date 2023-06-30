@@ -28,8 +28,9 @@ module.exports = {
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
+    "plugin:react/recommended",
   ],
-  plugins: ["prettier"],
+  plugins: ["prettier", "react"],
   rules: {
     "prettier/prettier": ["error", {}, { usePrettierrc: true }],
     "@typescript-eslint/explicit-function-return-type": "off",

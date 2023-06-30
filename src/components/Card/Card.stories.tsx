@@ -13,9 +13,7 @@ const meta: Meta<typeof Card> = {
 export const Default: Story = (args) => (
   <Card>
     <CardHeader>
-      <CardTitle className="text-primary" aria-role="title">
-        Hello World
-      </CardTitle>
+      <CardTitle className="text-primary">Hello World</CardTitle>
     </CardHeader>
     <CardBody>Lorem Ipsum</CardBody>
     <CardFooter>Lorem ipsum</CardFooter>

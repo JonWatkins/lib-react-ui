@@ -5,6 +5,7 @@ import classNames from "classnames";
 export const Button: FC<ButtonProps> = ({
   size = "sm",
   color = "primary",
+  type = "button",
   disabled,
   text,
   className,
@@ -15,6 +16,7 @@ export const Button: FC<ButtonProps> = ({
   return (
     <button
       className={classNames(classes)}
+      type={type}
       onClick={onClick}
       disabled={disabled}
       {...props}

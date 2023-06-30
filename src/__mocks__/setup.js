@@ -1,3 +1,5 @@
+global.sizes = ["sm", "md", "lg"];
+
 global.colors = [
   "primary",
   "secondary",
@@ -12,4 +14,4 @@ global.colors = [
   "white",
 ];
 
-global.sizes = ["sm", "md", "lg"];
+global.icons = ["copy", "registered", "tm"];
