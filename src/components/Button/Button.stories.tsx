@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import { Button } from "./Button";
 import { ThemeColors, ThemeSizes } from "../../globals";
+import PropTypes from "prop-types";
 
 type Story = StoryObj<typeof Button>;
 

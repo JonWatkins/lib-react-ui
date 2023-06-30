@@ -1,0 +1,54 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Introduction" />
+
+# Welcome To Lib React UI
+
+Lib React UI is an open-source **React** component library. It includes a collection of pre-built components
+that are ready to use.
+
+## Installation
+
+Run one of the following comments to install `lib-react-ui` to you project:
+
+### npm
+```bash
+npm install lib-react-ui@latest
+```
+
+### yarn
+```bash
+yarn add lib-react-ui@latest
+```
+
+## Peer dependencies
+
+Please note that [react](https://www.npmjs.com/package/react) and [react-dom](https://www.npmjs.com/package/react-dom) are peer dependencies too:
+
+```json
+"peerDependencies": {
+  "react": "^17.0.0 || ^18.0.0",
+  "react-dom": "^17.0.0 || ^18.0.0"
+},
+```
+
+## Quickstart 
+
+The following code snippet demonstrates a simple app that uses the Lib React UI Button component:
+
+```js
+import * as React from "react";
+import { Button } from "lib-react-ui";
+
+function App() {
+  return <Button color="primary">Hello World</Button>;
+}
+```
+
+## Responsive meta tag
+
+To ensure proper rendering and touch zooming for all devices, add the responsive viewport meta tag to your **head** element:
+
+```html
+<meta name="viewport" content="initial-scale=1, width=device-width" />
+```
