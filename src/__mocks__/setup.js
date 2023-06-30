@@ -14,4 +14,4 @@ global.colors = [
   "white",
 ];
 
-global.icons = ["copy", "registered", "tm"];
+global.icons = ["copy", "registered", "tm", "counter-clockwise", "clockwise"];

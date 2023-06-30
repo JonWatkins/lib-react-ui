@@ -1,6 +1,11 @@
 import type { ThemeColors, ThemeSizes } from "../../globals";
 
-export type IconTypes = "copy" | "registered" | "tm";
+export type IconTypes =
+  | "copy"
+  | "registered"
+  | "tm"
+  | "counter-clockwise"
+  | "clockwise";
 
 export interface IconProps {
   id?: string;

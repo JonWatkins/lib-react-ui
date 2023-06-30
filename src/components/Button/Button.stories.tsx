@@ -54,11 +54,7 @@ export const ButtonWithHooks: Story = () => {
 ButtonWithHooks.args = {};
 
 export const AvailableSizes: Story = () => {
-  const sizes: ThemeSizes[] = [
-    "sm",
-    "md",
-    "lg"
-  ]
+  const sizes: ThemeSizes[] = ["sm", "md", "lg"];
 
   return (
     <>
@@ -67,7 +63,7 @@ export const AvailableSizes: Story = () => {
       ))}
     </>
   );
-}
+};
 
 AvailableSizes.args = {};
 
