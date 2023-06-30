@@ -14,3 +14,5 @@ export type ThemeColors =
 export type ThemeSizes = "sm" | "md" | "lg";
 
 export type ChildNodes = string | JSX.Element | JSX.Element[];
+
+export type BreakPoints = "sm" | "md" | "lg" | "xl";

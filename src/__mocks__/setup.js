@@ -15,3 +15,20 @@ global.colors = [
 ];
 
 global.icons = ["copy", "registered", "tm", "counter-clockwise", "clockwise"];
+
+global.breakPoints = ["sm", "md", "lg", "xl"];
+
+global.columnWidths = [
+  "1",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+  "10",
+  "11",
+  "12",
+];

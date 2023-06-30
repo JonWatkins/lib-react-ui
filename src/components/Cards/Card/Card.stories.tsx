@@ -6,7 +6,7 @@ type Story = StoryObj<typeof Card>;
 
 const meta: Meta<typeof Card> = {
   component: Card,
-  title: "Card",
+  title: "Cards/Card",
   tags: ["autodocs"],
   argTypes: {},
 };

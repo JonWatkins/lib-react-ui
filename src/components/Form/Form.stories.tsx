@@ -8,7 +8,7 @@ type Story = StoryObj<typeof Form>;
 
 const meta: Meta<typeof Form> = {
   component: Form,
-  title: "Form",
+  title: "Form/Form",
   tags: ["autodocs"],
   argTypes: {},
 };

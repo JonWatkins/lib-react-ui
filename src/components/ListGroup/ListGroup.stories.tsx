@@ -8,7 +8,7 @@ type Story = StoryObj<typeof ListGroup>;
 
 const meta: Meta<typeof ListGroup> = {
   component: ListGroup,
-  title: "ListGroup",
+  title: "Components/ListGroup",
   tags: ["autodocs"],
   argTypes: {},
 };
