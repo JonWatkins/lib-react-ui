@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import { Button } from "./Button";
+import { ThemeColors, ThemeSizes } from "../../globals";
 
 type Story = StoryObj<typeof Button>;
 
@@ -27,28 +28,69 @@ Secondary.args = {
   color: "secondary",
 };
 
-export const Small: Story = (args) => <Button id="test-button" {...args} />;
+export const ButtonWithHooks: Story = () => {
+  const [value, setValue] = useState("secondary");
+  const [isPrimary, setIsPrimary] = useState(false);
 
-Small.args = {
-  disabled: false,
-  text: "Hello World",
-  size: "sm",
+  const onClickHandler = () => {
+    if (!isPrimary) {
+      setIsPrimary(true);
+      setValue("primary");
+    } else {
+      setIsPrimary(false);
+      setValue("secondary");
+    }
+  };
+
+  return (
+    <Button
+      color={value as ThemeColors}
+      onClick={onClickHandler}
+      text="Click Me"
+    />
+  );
 };
 
-export const Medium: Story = (args) => <Button id="test-button" {...args} />;
+ButtonWithHooks.args = {};
 
-Medium.args = {
-  disabled: false,
-  text: "Hello World",
-  size: "md",
+export const AvailableSizes: Story = () => {
+  const sizes: ThemeSizes[] = ["sm", "md", "lg"];
+
+  return (
+    <>
+      {sizes.map((size, index) => (
+        <Button key={index} size={size} text={size} className="mr-4 mb-4" />
+      ))}
+    </>
+  );
 };
 
-export const Large: Story = (args) => <Button id="test-button" {...args} />;
+AvailableSizes.args = {};
 
-Large.args = {
-  disabled: false,
-  text: "Hello World",
-  size: "lg",
+export const AvailableColors: Story = () => {
+  const colors: ThemeColors[] = [
+    "primary",
+    "secondary",
+    "success",
+    "danger",
+    "warning",
+    "info",
+    "lightest",
+    "light",
+    "dark",
+    "muted",
+    "white",
+  ];
+
+  return (
+    <>
+      {colors.map((color, index) => (
+        <Button key={index} color={color} text={color} className="mr-4 mb-4" />
+      ))}
+    </>
+  );
 };
+
+AvailableColors.args = {};
 
 export default meta;
