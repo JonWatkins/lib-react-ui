@@ -1,5 +1,5 @@
 {
-  "name": "react-lib-ui",
+  "name": "lib-react-ui",
   "version": "1.0.0",
   "description": "",
   "main": "dist/bundle.cjs.js",
@@ -12,6 +12,7 @@
     "build": "rollup -c --bundleConfigAsCjs",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
+    "ci": "npm run lint && npm run test",
     "test": "jest"
   },
   "author": "Jon Watkins",

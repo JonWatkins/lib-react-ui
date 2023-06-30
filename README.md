@@ -1,7 +1,7 @@
-(WIP) React Lib UI
+(WIP) Lib React UI
 
 #Installation
 
 ```
-npm i react-lib-ui
+npm i lib-react-ui
 ```
