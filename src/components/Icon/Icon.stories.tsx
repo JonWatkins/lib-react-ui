@@ -15,16 +15,7 @@ export const Default: Story = (args) => <Icon {...args} />;
 Default.args = {
   type: "copy",
   size: "lg",
+  color: "dark",
 };
-
-export const Size: Story = (args) => (
-  <Fragment>
-    <Icon size="sm" type="copy" />
-    <Icon size="md" type="copy" />
-    <Icon size="lg" type="copy" />
-  </Fragment>
-);
-
-Size.args = {};
 
 export default meta;
