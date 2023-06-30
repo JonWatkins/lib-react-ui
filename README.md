@@ -21,6 +21,10 @@ function App() {
 }
 ```
 
+## Documentation
+
+Please follow the documentation at [https://jonwatkins.github.io/lib-react-ui](https://jonwatkins.github.io/lib-react-ui).
+
 ## Contributing
 
 Read the [contributing guide](/.github/CONTRIBUTING.md) to learn about our development process, how to propose bug fixes and improvements, and how to build and test your changes.
