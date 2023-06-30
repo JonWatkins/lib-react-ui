@@ -9,7 +9,7 @@ import { Button } from "../Button";
 describe("InputGroup", () => {
   const getById = queryByAttribute.bind(null, "id");
 
-  it("should have the btn-group class", () => {
+  it("should have the input-group class", () => {
     const dom = render(<InputGroup id="test-id" />);
     expect(getById(dom.container, "test-id")).toHaveClass("input-group");
   });

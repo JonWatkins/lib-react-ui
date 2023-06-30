@@ -8,7 +8,7 @@ type Story = StoryObj<typeof InputGroup>;
 
 const meta: Meta<typeof InputGroup> = {
   component: InputGroup,
-  title: "InputGroup",
+  title: "Form/InputGroup",
   tags: ["autodocs"],
   argTypes: {},
 };
