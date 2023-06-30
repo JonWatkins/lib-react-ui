@@ -6,3 +6,4 @@ export * from "./Input";
 export * from "./InputGroup";
 export * from "./ListGroup";
 export * from "./Grid";
+export * from "./Alert";

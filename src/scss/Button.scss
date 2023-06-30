@@ -32,24 +32,6 @@
 	font-size: 1.25rem;
 }
 
-@mixin text-color($val) {
-  @if ($val == 'light') {
-    color: var(--dark-color);
-  }
-  @else if ($val == 'white') {
-    color: var(--dark-color);
-  }
-  @else if ($val == 'muted') {
-    color: var(--dark-color);
-  }
-  @else if ($val == 'lightest') {
-    color: var(--dark-color);
-  }
-  @else {
-    color: var(--white-color);
-  }
-}
-
 @each $type, $class in $theme-colors {
 	.btn-#{$type} {
 		background-color: $class;
