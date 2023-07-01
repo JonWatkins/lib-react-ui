@@ -6,17 +6,16 @@ type Story = StoryObj<typeof CardHeader>;
 
 const meta: Meta<typeof CardHeader> = {
   component: CardHeader,
-  title: "Components/Cards/CardHeader",
-  tags: ["autodocs"],
+  title: "Card Header",
   argTypes: {},
 };
 
-export const Default: Story = (args) => (
+export const Primary: Story = (args) => (
   <CardHeader>
     <CardTitle>Lorem Ipsum</CardTitle>
   </CardHeader>
 );
 
-Default.args = {};
+Primary.args = {};
 
 export default meta;

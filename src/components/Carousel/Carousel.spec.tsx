@@ -15,6 +15,13 @@ import { Carousel, CarouselItem } from "./Carousel";
 describe("Carousel", () => {
   const getById = queryByAttribute.bind(null, "id");
 
+  it("Should be able to render an carousel item", () => {
+    const dom = render(<CarouselItem id="test-carousel" />);
+    expect(getById(dom.container, "test-carousel")).toHaveClass(
+      "carousel-item"
+    );
+  });
+
   it("Should be able to render an carousel", () => {
     const dom = render(<Carousel id="test-carousel" />);
     expect(getById(dom.container, "test-carousel")).toHaveClass("carousel");

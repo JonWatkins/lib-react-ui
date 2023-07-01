@@ -7,8 +7,7 @@ type Story = StoryObj<typeof Button>;
 
 const meta: Meta<typeof Button> = {
   component: Button,
-  title: "Buttons/Button",
-  tags: ["autodocs"],
+  title: "Button",
   argTypes: {},
 };
 
@@ -18,14 +17,6 @@ Primary.args = {
   disabled: false,
   text: "Hello World",
   color: "primary",
-};
-
-export const Secondary: Story = (args) => <Button id="test-button" {...args} />;
-
-Secondary.args = {
-  disabled: false,
-  text: "Hello World",
-  color: "secondary",
 };
 
 export const ButtonWithHooks: Story = () => {

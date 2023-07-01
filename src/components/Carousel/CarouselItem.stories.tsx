@@ -6,8 +6,7 @@ type Story = StoryObj<typeof CarouselItem>;
 
 const meta: Meta<typeof CarouselItem> = {
   component: CarouselItem,
-  title: "Components/Carousel/CarouselItem",
-  tags: ["autodocs"],
+  title: "CarouselItem",
   argTypes: {},
 };
 

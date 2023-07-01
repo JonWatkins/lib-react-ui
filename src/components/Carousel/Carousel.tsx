@@ -8,7 +8,7 @@ export const CarouselItem: FC<CarouselItemProps> = ({
   id,
   children,
   className,
-  width,
+  width = "100%",
   ...props
 }) => {
   const classes = ["carousel-item", className];

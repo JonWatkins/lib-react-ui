@@ -7,12 +7,11 @@ type Story = StoryObj<typeof ButtonGroup>;
 
 const meta: Meta<typeof ButtonGroup> = {
   component: ButtonGroup,
-  title: "Buttons/ButtonGroup",
-  tags: ["autodocs"],
+  title: "Button Group",
   argTypes: {},
 };
 
-export const Default: Story = (args) => (
+export const Primary: Story = (args) => (
   <ButtonGroup>
     <Button text="Click Me" color="primary" />
     <Button text="Click Me" color="warning" />
@@ -20,6 +19,6 @@ export const Default: Story = (args) => (
   </ButtonGroup>
 );
 
-Default.args = {};
+Primary.args = {};
 
 export default meta;

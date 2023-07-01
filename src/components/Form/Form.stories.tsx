@@ -10,8 +10,7 @@ type Story = StoryObj<typeof Form>;
 
 const meta: Meta<typeof Form> = {
   component: Form,
-  title: "Form/Form",
-  tags: ["autodocs"],
+  title: "Form",
   argTypes: {},
 };
 
@@ -28,7 +27,7 @@ const handleSubmit = (e) => {
   console.log(e);
 };
 
-export const Default: Story = (args) => {
+export const Primary: Story = (args) => {
   return (
     <Form {...args}>
       <Input className="mb-4" label="Name" required />
@@ -47,7 +46,7 @@ export const Default: Story = (args) => {
   );
 };
 
-Default.args = {
+Primary.args = {
   className: "mt-5 mb-20",
   onSubmit: handleSubmit,
 };

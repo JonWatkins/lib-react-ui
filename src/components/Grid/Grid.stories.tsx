@@ -6,12 +6,11 @@ type Story = StoryObj<typeof Grid>;
 
 const meta: Meta<typeof Grid> = {
   component: Grid,
-  title: "Layout/Grid",
-  tags: ["autodocs"],
+  title: "Grid",
   argTypes: {},
 };
 
-export const Default: Story = (args) => (
+export const Primary: Story = (args) => (
   <Grid {...args}>
     <GridRow>
       <GridColumn colWidth="6">
@@ -30,7 +29,7 @@ export const Default: Story = (args) => (
   </Grid>
 );
 
-Default.args = {
+Primary.args = {
   fluid: false,
 };
 

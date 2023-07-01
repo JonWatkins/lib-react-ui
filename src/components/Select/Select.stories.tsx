@@ -8,8 +8,7 @@ type Story = StoryObj<typeof Select>;
 
 const meta: Meta<typeof Select> = {
   component: Select,
-  title: "Form/Select",
-  tags: ["autodocs"],
+  title: "Select",
   argTypes: {},
 };
 
@@ -21,7 +20,7 @@ const options: SelectOption[] = [
   { label: "Game", value: "Game" },
 ];
 
-export const Default: Story = (args) => {
+export const Primary: Story = (args) => {
   return (
     <div className="pb-20">
       <Select className="mb-20" {...args} />;
@@ -29,7 +28,7 @@ export const Default: Story = (args) => {
   );
 };
 
-Default.args = {
+Primary.args = {
   placeholder: "Select an option",
   options: options,
 };

@@ -8,18 +8,17 @@ type Story = StoryObj<typeof InputGroup>;
 
 const meta: Meta<typeof InputGroup> = {
   component: InputGroup,
-  title: "Form/InputGroup",
-  tags: ["autodocs"],
+  title: "InputGroup",
   argTypes: {},
 };
 
-export const Default: Story = (args) => (
+export const Primary: Story = (args) => (
   <InputGroup>
     <Input />
     <Button text="Search" />
   </InputGroup>
 );
 
-Default.args = {};
+Primary.args = {};
 
 export default meta;
