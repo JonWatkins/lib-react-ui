@@ -1,6 +1,6 @@
 {
   "name": "lib-react-ui",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Reusable React UI Components",
   "main": "dist/bundle.cjs.js",
   "module": "dist/bundle.esm.js",
@@ -25,7 +25,8 @@
   },
   "dependencies": {
     "classnames": "^2.3.2",
-    "prop-types": "^15.8.1"
+    "prop-types": "^15.8.1",
+    "react-swipeable": "^7.0.1"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.22.5",
