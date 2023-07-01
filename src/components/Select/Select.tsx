@@ -90,7 +90,7 @@ export const Select: FC<SelectProps> = ({
                 onClick={(e) => onTagRemove(e, option)}
                 className="select-tag-close"
               >
-                <Icon type="close" size="sm" className="text-danger" />
+                <Icon type="cancel" size="sm" className="text-danger" />
               </span>
             </div>
           ))}
@@ -158,7 +158,7 @@ export const Select: FC<SelectProps> = ({
         </div>
         <div className="select-dropdown">
           <div className="select-tool">
-            <Icon type="down-arrow" size="sm" />
+            <Icon type="down-micro" size="sm" />
           </div>
         </div>
       </div>
