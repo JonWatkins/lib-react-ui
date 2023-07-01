@@ -13,5 +13,5 @@ export interface BadgeProps extends LRUIElement {
   size?: ThemeSizes;
   children?: ChildNodes;
   className?: string;
-  onClick?: MouseEventHandler<HTMLButtonElement>;
+  onClick?: MouseEventHandler<HTMLDivElement>;
 }
