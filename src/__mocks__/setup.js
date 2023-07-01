@@ -14,18 +14,7 @@ global.colors = [
   "white",
 ];
 
-global.icons = [
-  "copy",
-  "registered",
-  "tm",
-  "counter-clockwise",
-  "clockwise",
-  "left-arrow",
-  "down-arrow",
-  "up-arrow",
-  "right-arrow",
-  "close",
-];
+global.icons = ["search", "doc"];
 
 global.breakPoints = ["sm", "md", "lg", "xl"];
 

@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import { Icon } from "./Icon";
-import { IconTypes } from "./Icon.types";
+import { iconList } from "./Icons";
 import type { ThemeColors, ThemeSizes } from "../../globals";
 
 type Story = StoryObj<typeof Icon>;
@@ -15,7 +15,7 @@ const meta: Meta<typeof Icon> = {
 export const Primary: Story = (args) => <Icon {...args} />;
 
 Primary.args = {
-  type: "copy",
+  type: "archive",
   size: "lg",
   color: "dark",
 };
@@ -25,7 +25,7 @@ export const AvailableSizes: Story = () => {
   return (
     <>
       {sizes.map((size, index) => (
-        <Icon key={index} size={size} type="copy" className="mr-4 mb-4" />
+        <Icon key={index} size={size} type="archive" className="mr-4 mb-4" />
       ))}
     </>
   );
@@ -51,7 +51,7 @@ export const AvailableColors: Story = () => {
   return (
     <>
       {colors.map((color, index) => (
-        <Icon key={index} color={color} type="copy" className="mr-4 mb-4" />
+        <Icon key={index} color={color} type="archive" className="mr-4 mb-4" />
       ))}
     </>
   );
@@ -60,22 +60,9 @@ export const AvailableColors: Story = () => {
 AvailableColors.args = {};
 
 export const AvailableIcons: Story = () => {
-  const types: IconTypes[] = [
-    "copy",
-    "registered",
-    "tm",
-    "counter-clockwise",
-    "clockwise",
-    "left-arrow",
-    "down-arrow",
-    "up-arrow",
-    "right-arrow",
-    "close",
-  ];
-
   return (
     <>
-      {types.map((type, index) => (
+      {iconList.map((type, index) => (
         <Icon key={index} type={type} className="mr-4 mb-4" />
       ))}
     </>
