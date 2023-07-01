@@ -7,3 +7,4 @@ export * from "./InputGroup";
 export * from "./ListGroup";
 export * from "./Grid";
 export * from "./Alert";
+export * from "./Select";

@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import classNames from "classnames";
-import { GridColumnProps } from "./GridColumn.types";
+import type { GridColumnProps } from "./GridColumn.types";
 
 export const GridColumn: FC<GridColumnProps> = ({
   id,

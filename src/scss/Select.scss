@@ -1,0 +1,64 @@
+.select-container {
+  text-align: left;
+  border: 1px solid #ccc;
+  position: relative;
+  border-radius: 5px;
+}
+
+.select-input {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+}
+
+.select-menu {
+  position: absolute;
+  transform: translateY(4px);
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: auto;
+  max-height: 150px;
+  background-color: #fff;
+}
+
+.select-menu-item {
+  padding: 5px;
+  cursor: pointer;
+}
+
+.select-menu-item:hover {
+  background-color: #9fc3f870;
+}
+
+.select-menu-item.selected {
+  background-color: #0d6efd;
+    color: #fff;
+}
+
+.select-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.select-tag-item {
+  background-color: #ddd;
+  padding: 2px 4px;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+}
+
+.select-tag-close {
+  display: flex;
+  align-items: center;
+}
+
+.select-search {
+  padding: 5px;
+  background-color: #eee;
+}
+

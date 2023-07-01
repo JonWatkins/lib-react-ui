@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import classNames from "classnames";
-import { FormProps } from "./Form.types";
+import type { FormProps } from "./Form.types";
 
 export const Form: FC<FormProps> = ({
   id,

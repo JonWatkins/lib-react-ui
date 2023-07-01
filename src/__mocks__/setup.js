@@ -14,7 +14,18 @@ global.colors = [
   "white",
 ];
 
-global.icons = ["copy", "registered", "tm", "counter-clockwise", "clockwise"];
+global.icons = [
+  "copy",
+  "registered",
+  "tm",
+  "counter-clockwise",
+  "clockwise",
+  "left-arrow",
+  "down-arrow",
+  "up-arrow",
+  "right-arrow",
+  "close",
+];
 
 global.breakPoints = ["sm", "md", "lg", "xl"];
 

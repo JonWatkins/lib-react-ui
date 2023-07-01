@@ -1,9 +1,9 @@
-import { MouseEventHandler } from "react";
-import type { ThemeColors, ThemeSizes } from "../../globals";
+import type { MouseEventHandler } from "react";
+import type { LRUIButtonElement, ThemeColors, ThemeSizes } from "../../globals";
 
 export type ButtonType = "button" | "submit" | "reset";
 
-export interface ButtonProps {
+export interface ButtonProps extends LRUIButtonElement {
   text?: string;
   disabled?: boolean;
   color?: ThemeColors;

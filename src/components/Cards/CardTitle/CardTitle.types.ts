@@ -1,6 +1,6 @@
-import { ChildNodes } from "../../../globals";
+import type { LRUIElement, ChildNodes } from "../../../globals";
 
-export interface CardTitleProps {
+export interface CardTitleProps extends LRUIElement {
   id?: string;
   children?: ChildNodes;
   className?: string;

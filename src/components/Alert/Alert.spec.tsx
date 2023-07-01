@@ -3,7 +3,7 @@ import "@testing-library/jest-dom";
 import React from "react";
 import { render, queryByAttribute } from "@testing-library/react";
 import { Alert } from "./Alert";
-import { ThemeColors } from "../../globals";
+import type { ThemeColors } from "../../globals";
 
 describe("Alert", () => {
   const getById = queryByAttribute.bind(null, "id");

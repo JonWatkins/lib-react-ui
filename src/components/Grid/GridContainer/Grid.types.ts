@@ -1,6 +1,6 @@
-import { ChildNodes } from "../../../globals";
+import type { LRUIElement, ChildNodes } from "../../../globals";
 
-export interface GridProps {
+export interface GridProps extends LRUIElement {
   id?: string;
   fluid?: boolean;
   children?: ChildNodes;

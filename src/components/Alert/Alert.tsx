@@ -1,6 +1,6 @@
 import React, { FC } from "react";
-import { AlertProps } from "./Alert.types";
 import classNames from "classnames";
+import type { AlertProps } from "./Alert.types";
 
 export const Alert: FC<AlertProps> = ({
   id,

@@ -1,5 +1,5 @@
-import { ChildNodes } from "../../globals";
-import { ChangeEventHandler } from "react";
+import type { LRUIInputElement, LRUIElement, ChildNodes } from "../../globals";
+import type { ChangeEventHandler } from "react";
 
 export type InputTypes =
   | "checkbox"
@@ -22,7 +22,7 @@ export type InputTypes =
   | "url"
   | "week";
 
-export interface InputProps {
+export interface InputProps extends LRUIInputElement {
   id?: string;
   label?: string;
   type?: InputTypes;
@@ -30,10 +30,11 @@ export interface InputProps {
   placeholder?: string;
   className?: string;
   required?: boolean;
+  value?: any;
   onChange?: ChangeEventHandler<HTMLInputElement>;
 }
 
-export interface InputLabelProps {
+export interface InputLabelProps extends LRUIElement {
   id?: string;
   label?: string;
   children?: ChildNodes;

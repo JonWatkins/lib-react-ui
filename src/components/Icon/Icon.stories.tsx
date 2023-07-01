@@ -27,6 +27,11 @@ export const AvailableIcons: Story = () => {
     "tm",
     "counter-clockwise",
     "clockwise",
+    "left-arrow",
+    "down-arrow",
+    "up-arrow",
+    "right-arrow",
+    "close",
   ];
 
   return (
