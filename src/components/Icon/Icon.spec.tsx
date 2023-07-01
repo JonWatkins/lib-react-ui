@@ -3,7 +3,7 @@ import "@testing-library/jest-dom";
 import React from "react";
 import { render, queryByAttribute } from "@testing-library/react";
 import { Icon } from "./Icon";
-import { iconList } from "./icons";
+import { iconList } from "./IconList";
 
 describe("Icon", () => {
   const getById = queryByAttribute.bind(null, "id");

@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import { Icon } from "./Icon";
-import { iconList } from "./Icons";
+import { iconList } from "./IconList";
 import type { ThemeColors, ThemeSizes } from "../../globals";
 
 type Story = StoryObj<typeof Icon>;
