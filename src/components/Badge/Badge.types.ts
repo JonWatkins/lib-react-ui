@@ -1,3 +1,5 @@
+import type { MouseEventHandler } from "react";
+
 import type {
   LRUIElement,
   ChildNodes,
@@ -11,4 +13,5 @@ export interface BadgeProps extends LRUIElement {
   size?: ThemeSizes;
   children?: ChildNodes;
   className?: string;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
 }

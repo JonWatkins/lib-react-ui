@@ -9,3 +9,4 @@ export * from "./Grid";
 export * from "./Alert";
 export * from "./Select";
 export * from "./Badge";
+export * from "./Carousel";
