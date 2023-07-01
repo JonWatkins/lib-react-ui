@@ -1,0 +1,25 @@
+.badge {
+	border-radius: $border-radius;
+	border-style: solid;
+	padding: 0rem 0.2rem;
+	text-decoration: none;
+	outline: none;
+	display: inline-block;
+  cursor: pointer;
+}
+
+.badge-md {
+	padding: 0.2rem 0.4rem;
+}
+
+.badge-lg {
+  padding: 0.4rem 0.6rem;
+}
+
+@each $type, $class in $theme-colors {
+	.badge-#{$type} {
+		background-color: $class;
+		border-color: $class;
+    @include text-color($type);
+  }
+}
