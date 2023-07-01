@@ -1,6 +1,6 @@
 import React, { FC } from "react";
-import { ListGroupProps } from "./ListGroup.types";
 import classNames from "classnames";
+import type { ListGroupProps } from "./ListGroup.types";
 
 export const ListGroup: FC<ListGroupProps> = ({
   id,

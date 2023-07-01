@@ -2,7 +2,6 @@ import "@testing-library/jest-dom";
 
 import React from "react";
 import { render, queryByAttribute } from "@testing-library/react";
-
 import { GridColumn } from "./GridColumn";
 
 describe("GridColumn", () => {

@@ -1,8 +1,14 @@
-import React, { FC } from "react";
-import { InputProps, InputLabelProps } from "./Input.types";
-import classNames from "classnames";
+import React, {
+  FC,
+  ForwardRefRenderFunction,
+  ForwardedRef,
+  forwardRef,
+} from "react";
 
-export const InputLabel: FC<InputLabelProps> = ({
+import classNames from "classnames";
+import type { InputProps, InputLabelProps } from "./Input.types";
+
+const InputLabel: FC<InputLabelProps> = ({
   id,
   label,
   children,
@@ -17,7 +23,10 @@ export const InputLabel: FC<InputLabelProps> = ({
   );
 };
 
-export const Input: FC<InputProps> = ({
+const RenderInput: ForwardRefRenderFunction<
+  HTMLInputElement,
+  InputProps & { innerRef?: ForwardedRef<HTMLInputElement> }
+> = ({
   id,
   label,
   placeholder,
@@ -25,7 +34,9 @@ export const Input: FC<InputProps> = ({
   className,
   type,
   required,
+  value,
   onChange,
+  innerRef,
   ...props
 }) => {
   const classes = ["form-control", className];
@@ -35,12 +46,14 @@ export const Input: FC<InputProps> = ({
       <div className="form-field">
         <InputLabel className="checkbox-label" label={label}>
           <input
+            ref={innerRef}
             id={id}
             className={classNames(classes)}
             type={type}
             placeholder={placeholder}
             disabled={disabled}
             required={required}
+            value={value}
             onChange={onChange}
             {...props}
           />
@@ -53,15 +66,24 @@ export const Input: FC<InputProps> = ({
     <div className="form-field">
       <InputLabel label={label} />
       <input
+        ref={innerRef}
         id={id}
         className={classNames(classes)}
         type={type}
         placeholder={placeholder}
         disabled={disabled}
         required={required}
+        value={value}
         onChange={onChange}
         {...props}
       />
     </div>
   );
 };
+
+// eslint-disable-next-line react/display-name
+export const Input = forwardRef(
+  (props: InputProps, ref: ForwardedRef<HTMLInputElement>) => (
+    <RenderInput {...props} innerRef={ref} />
+  )
+);

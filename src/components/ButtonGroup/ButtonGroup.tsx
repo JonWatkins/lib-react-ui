@@ -1,6 +1,6 @@
 import React, { FC } from "react";
-import { ButtonGroupProps } from "./ButtonGroup.types";
 import classNames from "classnames";
+import type { ButtonGroupProps } from "./ButtonGroup.types";
 
 export const ButtonGroup: FC<ButtonGroupProps> = ({
   id,

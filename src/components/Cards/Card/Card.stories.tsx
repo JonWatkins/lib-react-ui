@@ -1,6 +1,6 @@
 import React from "react";
-import { Meta, StoryObj } from "@storybook/react";
 import { Card, CardBody, CardFooter, CardHeader, CardTitle } from "..";
+import type { Meta, StoryObj } from "@storybook/react";
 
 type Story = StoryObj<typeof Card>;
 

@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import classNames from "classnames";
-import { CardBodyProps } from "./CardBody.types";
+import type { CardBodyProps } from "./CardBody.types";
 
 export const CardBody: FC<CardBodyProps> = ({
   id,

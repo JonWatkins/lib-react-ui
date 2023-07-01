@@ -1,6 +1,6 @@
 import React, { FC } from "react";
-import { ButtonProps } from "./Button.types";
 import classNames from "classnames";
+import type { ButtonProps } from "./Button.types";
 
 export const Button: FC<ButtonProps> = ({
   size = "sm",

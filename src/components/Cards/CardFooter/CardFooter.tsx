@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import classNames from "classnames";
-import { CardFooterProps } from "./CardFooter.types";
+import type { CardFooterProps } from "./CardFooter.types";
 
 export const CardFooter: FC<CardFooterProps> = ({
   id,

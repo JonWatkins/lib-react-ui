@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import classNames from "classnames";
-import { CardTitleProps } from "./CardTitle.types";
+import type { CardTitleProps } from "./CardTitle.types";
 
 export const CardTitle: FC<CardTitleProps> = ({
   id,

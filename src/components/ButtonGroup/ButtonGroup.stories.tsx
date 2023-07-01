@@ -1,7 +1,7 @@
 import React from "react";
-import { Meta, StoryObj } from "@storybook/react";
 import { ButtonGroup } from "./ButtonGroup";
 import { Button } from "../Button";
+import type { Meta, StoryObj } from "@storybook/react";
 
 type Story = StoryObj<typeof ButtonGroup>;
 

@@ -1,4 +1,4 @@
-import { ChildNodes, BreakPoints } from "../../../globals";
+import type { LRUIElement, BreakPoints } from "../../../globals";
 
 export type ColumWidths =
   | "1"
@@ -14,9 +14,9 @@ export type ColumWidths =
   | "11"
   | "12";
 
-export interface GridColumnProps {
+export interface GridColumnProps extends LRUIElement {
   id?: string;
-  children?: ChildNodes;
+  children?: any; // TODO: fix this type
   breakPoint?: BreakPoints;
   colWidth?: string;
   className?: string;

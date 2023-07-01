@@ -1,6 +1,6 @@
 import React, { FC } from "react";
-import { ListGroupItemProps } from "./ListGroupItem.types";
 import classNames from "classnames";
+import type { ListGroupItemProps } from "./ListGroupItem.types";
 
 export const ListGroupItem: FC<ListGroupItemProps> = ({
   id,

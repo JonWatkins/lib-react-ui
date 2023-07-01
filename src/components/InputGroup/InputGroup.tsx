@@ -1,6 +1,6 @@
 import React, { FC } from "react";
-import { InputGroupProps } from "./InputGroup.types";
 import classNames from "classnames";
+import type { InputGroupProps } from "./InputGroup.types";
 
 export const InputGroup: FC<InputGroupProps> = ({
   id,

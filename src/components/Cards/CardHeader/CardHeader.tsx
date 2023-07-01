@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import classNames from "classnames";
-import { CardHeaderProps } from "./CardHeader.types";
+import type { CardHeaderProps } from "./CardHeader.types";
 
 export const CardHeader: FC<CardHeaderProps> = ({
   id,
