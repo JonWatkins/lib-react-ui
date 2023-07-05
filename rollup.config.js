@@ -14,7 +14,7 @@ const plugins = [
   resolve(),
   commonjs(),
   scss({
-    fileName: "bundle.css",
+    fileName: "styles.css",
     outputStyle: "compressed",
   }),
   typescript({
