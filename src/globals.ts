@@ -1,4 +1,4 @@
-import { InputHTMLAttributes, HTMLAttributes } from "react";
+import { InputHTMLAttributes, HTMLAttributes, ReactNode } from "react";
 
 type Omitted =
   | "prefix"
@@ -24,7 +24,7 @@ export type ThemeColors =
 
 export type ThemeSizes = "sm" | "md" | "lg";
 
-export type ChildNodes = string | number | JSX.Element | JSX.Element[];
+export type ChildNodes = string | number | ReactNode | ReactNode[];
 
 export type BreakPoints = "sm" | "md" | "lg" | "xl";
 

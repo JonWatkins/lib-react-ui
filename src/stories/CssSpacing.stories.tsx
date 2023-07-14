@@ -1,21 +1,15 @@
 import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
 
-type Story = StoryObj
+type Story = StoryObj;
 
 const meta: Meta<Story> = {
   title: "CSS Spacing",
   argTypes: {},
 };
 
-export const Primary: Story = (args) => (
-  <div>
+export const Primary: Story = (args) => <div></div>;
 
-  </div>
-);
-
-Primary.args = {
-
-};
+Primary.args = {};
 
 export default meta;
