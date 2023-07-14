@@ -1,4 +1,5 @@
 import type { StorybookConfig } from "@storybook/react-webpack5";
+import sass from "sass";
 
 const config: StorybookConfig = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
@@ -7,10 +8,10 @@ const config: StorybookConfig = {
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
     {
-      name: "@storybook/addon-styling",
+      name: '@storybook/addon-styling',
       options: {
         sass: {
-          implementation: require("sass"),
+          implementation: sass,
         },
       },
     },
@@ -22,9 +23,5 @@ const config: StorybookConfig = {
   docs: {
     autodocs: "tag",
   },
-  core: {
-    disableTelemetry: true,
-  },
 };
-
 export default config;
