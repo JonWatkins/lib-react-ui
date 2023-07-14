@@ -12,7 +12,8 @@
     "build": "npm run clean && tsup src/index.ts --config tsup.config.js",
     "clean": "rimraf dist",
     "test": "jest",
-    "start": "storybook dev -p 6006"
+    "start": "storybook dev -p 6006",
+    "docs": "node ./scripts/docs.js"
   },
   "author": "Jon Watkins",
   "license": "MIT",
