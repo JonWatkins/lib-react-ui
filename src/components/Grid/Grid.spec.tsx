@@ -10,7 +10,8 @@ describe("Grid", () => {
   describe("GridColumn", () => {
     it("should be able to render a GridColumn", () => {
       const dom = render(<GridColumn id="test-grid" />);
-      expect(getById(dom.container, "test-grid")).toHaveClass("grid-col-lg-12");
+      const grid = getById(dom.container, "test-grid")
+      expect(grid).toHaveClass("grid-col-lg-12");
     });
 
     global.breakPoints.forEach((breakPoint) => {
@@ -18,7 +19,8 @@ describe("Grid", () => {
         const dom = render(
           <GridColumn id="test-grid" breakPoint={breakPoint} />
         );
-        expect(getById(dom.container, "test-grid")).toHaveClass(
+        const grid = getById(dom.container, "test-grid")
+        expect(grid).toHaveClass(
           `grid-col-${breakPoint}-12`
         );
       });
@@ -29,7 +31,8 @@ describe("Grid", () => {
         const dom = render(
           <GridColumn id="test-grid" colWidth={columnWidth} />
         );
-        expect(getById(dom.container, "test-grid")).toHaveClass(
+        const grid = getById(dom.container, "test-grid")
+        expect(grid).toHaveClass(
           `grid-col-lg-${columnWidth}`
         );
       });
@@ -39,12 +42,22 @@ describe("Grid", () => {
   describe("GridRow", () => {
     it("should be able to render a GridRow", () => {
       const dom = render(<GridRow id="test-grid" />);
-      expect(getById(dom.container, "test-grid")).toHaveClass("grid-row");
+      const grid = getById(dom.container, "test-grid")
+      expect(grid).toHaveClass("grid-row");
     });
   });
 
   it("should be able to render a Grid", () => {
     const dom = render(<Grid id="test-grid" />);
-    expect(getById(dom.container, "test-grid")).toHaveClass("grid");
+    const grid = getById(dom.container, "test-grid")
+    expect(grid).toHaveClass("grid");
+    expect(grid).not.toHaveClass("grid-fluid");
+  });
+
+  it("should be able to render a fluid Grid", () => {
+    const dom = render(<Grid id="test-grid" fluid />);
+    const grid = getById(dom.container, "test-grid")
+    expect(grid).toHaveClass("grid");
+    expect(grid).toHaveClass("grid-fluid");
   });
 });

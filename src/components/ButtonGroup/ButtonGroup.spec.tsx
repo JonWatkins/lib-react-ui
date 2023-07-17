@@ -10,7 +10,8 @@ describe("ButtonGroup", () => {
 
   it("should have the btn-group class", () => {
     const dom = render(<ButtonGroup id="test-id" />);
-    expect(getById(dom.container, "test-id")).toHaveClass("btn-group");
+    const group = getById(dom.container, "test-id")
+    expect(group).toHaveClass("btn-group");
   });
 
   it("should be able to render child nodes", () => {
@@ -20,7 +21,7 @@ describe("ButtonGroup", () => {
         <Button text="Submit" />
       </ButtonGroup>
     );
-
-    expect(screen.getAllByRole("button")[0]).toHaveTextContent("Cancel");
+    const [button] = screen.getAllByRole("button")
+    expect(button).toHaveTextContent("Cancel");
   });
 });

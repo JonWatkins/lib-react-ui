@@ -17,14 +17,16 @@ describe("Carousel", () => {
 
   it("Should be able to render an carousel item", () => {
     const dom = render(<CarouselItem id="test-carousel" />);
-    expect(getById(dom.container, "test-carousel")).toHaveClass(
+    const carousel = getById(dom.container, "test-carousel")
+    expect(carousel).toHaveClass(
       "carousel-item"
     );
   });
 
   it("Should be able to render an carousel", () => {
     const dom = render(<Carousel id="test-carousel" />);
-    expect(getById(dom.container, "test-carousel")).toHaveClass("carousel");
+    const carousel = getById(dom.container, "test-carousel")
+    expect(carousel).toHaveClass("carousel");
   });
 
   it("should render carousel items", async () => {

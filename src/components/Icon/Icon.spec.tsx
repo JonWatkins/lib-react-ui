@@ -10,27 +10,33 @@ describe("Icon", () => {
 
   it("should be able to render an icon", () => {
     const dom = render(<Icon id="test-icon" />);
-    expect(getById(dom.container, "test-icon")).toHaveClass("icon");
+    const icon = getById(dom.container, "test-icon");
+    expect(icon).toHaveClass("icon");
+    expect(icon).toHaveClass("icon-md");
+    expect(icon).toHaveClass("text-dark");
   });
 
   global.colors.forEach((color) => {
     it(`should be able to set the type of the button to ${color}`, () => {
       const dom = render(<Icon id="test-icon" type="archive" color={color} />);
-      expect(getById(dom.container, "test-icon")).toHaveClass(`text-${color}`);
+      const icon = getById(dom.container, "test-icon");
+      expect(icon).toHaveClass(`text-${color}`);
     });
   });
 
   global.sizes.forEach((size) => {
     it(`should be able to set the size of the button to ${size}`, () => {
       const dom = render(<Icon id="test-icon" type="archive" size={size} />);
-      expect(getById(dom.container, "test-icon")).toHaveClass(`icon-${size}`);
+      const icon = getById(dom.container, "test-icon");
+      expect(icon).toHaveClass(`icon-${size}`);
     });
   });
 
-  iconList.forEach((icon) => {
-    it(`should be able to render a ${icon} icon`, () => {
-      const dom = render(<Icon id="test-icon" type={icon} />);
-      expect(getById(dom.container, "test-icon")).toHaveClass(`icon-${icon}`);
+  iconList.forEach((type) => {
+    it(`should be able to render a ${type} icon`, () => {
+      const dom = render(<Icon id="test-icon" type={type} />);
+      const icon = getById(dom.container, "test-icon");
+      expect(icon).toHaveClass(`icon-${type}`);
     });
   });
 });

@@ -11,13 +11,15 @@ describe("ListGroup", () => {
   describe("ListGroup", () => {
     it("should have the list-group-item class", () => {
       const dom = render(<ListGroupItem id="item">Test</ListGroupItem>);
-      expect(getById(dom.container, "item")).toHaveClass("list-group-item");
+      const item = getById(dom.container, "item")
+      expect(item).toHaveClass("list-group-item");
     });
   });
 
   it("should have the list-group class", () => {
     const dom = render(<ListGroup id="test-id" />);
-    expect(getById(dom.container, "test-id")).toHaveClass("list-group");
+    const group = getById(dom.container, "test-id")
+    expect(group).toHaveClass("list-group");
   });
 
   it("should be able to render child nodes", () => {
@@ -26,8 +28,8 @@ describe("ListGroup", () => {
         <ListGroupItem id="item">Test</ListGroupItem>
       </ListGroup>
     );
-
-    expect(getById(dom.container, "item")).toHaveTextContent("Test");
+    const item = getById(dom.container, "item");
+    expect(item).toHaveTextContent("Test");
   });
 
   it("is able to render multiple child nodes", () => {
@@ -44,8 +46,12 @@ describe("ListGroup", () => {
       </ListGroup>
     );
 
-    expect(getById(dom.container, "item1")).toHaveTextContent("Test");
-    expect(getById(dom.container, "link")).toHaveTextContent("testing");
-    expect(screen.getByRole("button")).toHaveTextContent("Click Me");
+    const item = getById(dom.container, "item1")
+    const link = getById(dom.container, "link")
+    const button = screen.getByRole("button")
+
+    expect(item).toHaveTextContent("Test");
+    expect(link).toHaveTextContent("testing");
+    expect(button).toHaveTextContent("Click Me");
   });
 });

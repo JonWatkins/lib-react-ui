@@ -24,21 +24,24 @@ describe("Select", () => {
 
   it("should be able to render a Select", () => {
     const dom = render(<Select id="test-select" />);
-    expect(getById(dom.container, "test-select")).toHaveClass(
+    const select = getById(dom.container, "test-select");
+    expect(select).toHaveClass(
       "select-container"
     );
   });
 
   it("should be able to render a Select with options", () => {
     const dom = render(<Select id="test-select" options={options} />);
-    expect(getById(dom.container, "test-select")).toHaveClass(
+    const select = getById(dom.container, "test-select");
+    expect(select).toHaveClass(
       "select-container"
     );
   });
 
   it("should be able to render a multi Select with options", () => {
     const dom = render(<Select id="test-select" isMulti options={options} />);
-    expect(getById(dom.container, "test-select")).toHaveClass(
+    const select = getById(dom.container, "test-select");
+    expect(select).toHaveClass(
       "select-container"
     );
   });
@@ -48,8 +51,11 @@ describe("Select", () => {
       <Select id="test-select" options={options} placeholder="choose" />
     );
     const trigger = screen.getByText("choose");
+    const select = getById(dom.container, 'test-select');
     await userEvent.click(trigger);
+    expect(select).toHaveClass('is-open');
     await userEvent.click(dom.container);
+    expect(select).not.toHaveClass('is-open');
   });
 
   it("should be able to  select an option", async () => {
@@ -115,7 +121,7 @@ describe("Select", () => {
   });
 
   it("should be able to render a searchable Select with options", async () => {
-    render(
+    const dom = render(
       <Select
         id="test-select"
         isSearchable
@@ -124,7 +130,10 @@ describe("Select", () => {
       />
     );
     const trigger = screen.getByText("choose");
+    const select = getById(dom.container, 'test-select');
     await userEvent.click(trigger);
+    expect(select).toHaveClass('is-searchable')
+    expect(select).toHaveClass('is-open');
   });
 
   it("should be able to filter options", async () => {

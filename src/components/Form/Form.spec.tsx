@@ -9,6 +9,7 @@ describe("Form", () => {
 
   it("should be able to render a form", () => {
     const dom = render(<Form id="test-form" />);
-    expect(getById(dom.container, "test-form")).toHaveClass("form");
+    const form = getById(dom.container, "test-form");
+    expect(form).toHaveClass("form");
   });
 });
