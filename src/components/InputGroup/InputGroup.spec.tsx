@@ -11,7 +11,8 @@ describe("InputGroup", () => {
 
   it("should have the input-group class", () => {
     const dom = render(<InputGroup id="test-id" />);
-    expect(getById(dom.container, "test-id")).toHaveClass("input-group");
+    const group = getById(dom.container, "test-id");
+    expect(group).toHaveClass("input-group");
   });
 
   it("should be able to render child nodes", () => {
@@ -22,6 +23,7 @@ describe("InputGroup", () => {
       </InputGroup>
     );
 
-    expect(screen.getByRole("button")).toHaveTextContent("Search");
+    const button = screen.getByRole("button");
+    expect(button).toHaveTextContent("Search");
   });
 });
