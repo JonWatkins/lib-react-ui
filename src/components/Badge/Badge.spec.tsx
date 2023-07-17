@@ -10,12 +10,16 @@ describe("Badge", () => {
 
   it("Should be able to render an Badge", () => {
     const dom = render(<Badge id="test-badge" />);
-    expect(getById(dom.container, "test-badge")).toHaveClass("badge");
+    const badge = getById(dom.container, "test-badge")
+    expect(badge).toHaveClass("badge");
+    expect(badge).toHaveClass("badge-info");
+    expect(badge).toHaveClass("badge-md");
   });
 
   it("should be able to render content", () => {
     const dom = render(<Badge id="test-badge">0</Badge>);
-    expect(getById(dom.container, "test-badge")).toHaveTextContent("0");
+    const badge = getById(dom.container, "test-badge")
+    expect(badge).toHaveTextContent("0");
   });
 
   global.colors.forEach((color) => {
@@ -23,7 +27,8 @@ describe("Badge", () => {
       const dom = render(
         <Badge id="test-badge" color={color as ThemeColors} />
       );
-      expect(getById(dom.container, "test-badge")).toHaveClass(
+      const badge = getById(dom.container, "test-badge")
+      expect(badge).toHaveClass(
         `badge-${color}`
       );
     });
@@ -32,7 +37,8 @@ describe("Badge", () => {
   global.sizes.forEach((size) => {
     it(`should be able to set the size of the Badge to ${size}`, () => {
       const dom = render(<Badge id="test-badge" color={size} />);
-      expect(getById(dom.container, "test-badge")).toHaveClass(`badge-${size}`);
+      const badge = getById(dom.container, "test-badge")
+      expect(badge).toHaveClass(`badge-${size}`);
     });
   });
 });

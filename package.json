@@ -12,6 +12,7 @@
     "build": "npm run clean && tsup src/index.ts --config tsup.config.js --minify terser",
     "clean": "rimraf dist",
     "test": "jest",
+    "mutations": "stryker run",
     "start": "storybook dev -p 6006",
     "docs": "node ./scripts/docs.js"
   },
@@ -43,6 +44,8 @@
     "@storybook/react-webpack5": "^7.0.27",
     "@storybook/testing-library": "^0.0.14-next.2",
     "@storybook/theming": "^7.0.27",
+    "@stryker-mutator/core": "^7.1.1",
+    "@stryker-mutator/jest-runner": "^7.1.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.4.3",
@@ -72,6 +75,7 @@
     "rimraf": "^5.0.1",
     "sass": "^1.63.6",
     "storybook": "^7.0.27",
+    "stryker-cli": "^1.0.2",
     "terser": "^5.19.0",
     "tsup": "^7.1.0",
     "typescript": "^5.1.6"
