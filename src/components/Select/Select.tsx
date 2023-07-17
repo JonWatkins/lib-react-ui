@@ -149,7 +149,7 @@ export const Select: FC<SelectProps> = ({
     <div
       ref={inputRef}
       id={id}
-      className={classNames(containerClasses)}
+      className={classNames(containerClasses, { 'is-open': showMenu, 'is-searchable': isSearchable })}
       {...props}
     >
       <div className="select-input">
