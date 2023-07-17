@@ -16,6 +16,7 @@ describe("Input", () => {
     render(<Input placeholder="Enter your name" />);
     const input = screen.getByPlaceholderText("Enter your name");
     expect(input).toHaveClass('form-control');
+    expect(input).toHaveAttribute('type', 'text');
     expect(input).toHaveAttribute(
       "placeholder",
       "Enter your name"
@@ -30,19 +31,30 @@ describe("Input", () => {
 
   it("renders the input component", async () => {
     render(<Input placeholder="Hello World" />);
+    
     const input = screen.getByPlaceholderText(
       "Hello World"
     ) as HTMLInputElement;
 
-    userEvent.type(input, "Hello World!");
-    await waitFor(() => expect(input.value).toBe("Hello World!"));
+    await userEvent.type(input, "Hello World!");
+  
+    expect(input.value).toBe("Hello World!")
   });
 
   it("should be able to render a label", async () => {
-    render(<Input label="Enter Your Email" />);
-    const { nodeName } = screen.getByText("Enter Your Email")
+    const dom = render(<Input id="test-input" label="Enter Your Email" />);
+    const { nodeName, textContent } = dom.container.querySelector('label') as HTMLElement;
     expect(nodeName).toBe("LABEL");
+    expect(textContent).toBe("Enter Your Email");
   });
+
+  it('should not render a label if not given', () => {
+    const dom = render(
+      <Input id="test-input" />
+    );
+    const label = dom.container.querySelector('label')
+    expect(label).toEqual(null)
+  })
 
   it("should be able to render a checkbox", () => {
     const dom = render(
@@ -53,6 +65,7 @@ describe("Input", () => {
       "type",
       "checkbox"
     );
+    expect(input.parentNode).toHaveClass('checkbox-label')
   });
 
   it("should be able to render a checkbox", () => {
@@ -62,5 +75,6 @@ describe("Input", () => {
       "type",
       "radio"
     );
+    expect(input.parentNode).toHaveClass('checkbox-label')
   });
 });
