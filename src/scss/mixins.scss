@@ -1,3 +1,5 @@
+@import "./rfs.scss";
+
 @mixin text-color($val) {
   @if ($val == 'light') {
     color: var(--dark-color);
@@ -15,3 +17,4 @@
     color: var(--white-color);
   }
 }
+
