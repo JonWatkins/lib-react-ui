@@ -1,0 +1,28 @@
+table {
+    border: 0;
+    border-collapse: collapse;
+    thead {
+        tr {
+            th.sticky {
+                position: sticky;
+                top: 0;
+                z-index: 10;
+                background-color: $white;
+                .table-head-bb {
+                    border-bottom: 1px solid $lightDark;
+                }
+            }
+        }
+    }
+    tbody {
+        td {
+            vertical-align: middle;
+            border-bottom: 1px solid $light;
+        }
+    }
+}
+
+.overflow-scroll {
+    max-height: 16rem;
+    overflow: auto;
+}
