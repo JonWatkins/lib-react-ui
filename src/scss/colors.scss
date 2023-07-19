@@ -20,11 +20,11 @@
 		}
 	}
 
-  .text-#{type} {
+  .text-#{$type} {
     color: $class;
   }
 
-  .bg-#{type} {
+  .bg-#{$type} {
     background-color: $class;
   }
 }
