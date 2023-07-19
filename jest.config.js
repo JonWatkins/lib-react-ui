@@ -4,5 +4,5 @@ export default {
   collectCoverage: true,
   coverageDirectory: "coverage",
   testEnvironment: "jsdom",
-  verbose: true,
+  verbose: false,
 };

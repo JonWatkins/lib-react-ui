@@ -18,6 +18,7 @@ describe("Carousel", () => {
   it("Should be able to render an carousel item", () => {
     const dom = render(<CarouselItem id="test-carousel" />);
     const carousel = getById(dom.container, "test-carousel")
+    expect(carousel).toHaveAttribute('style', 'width: 100%;')
     expect(carousel).toHaveClass(
       "carousel-item"
     );
@@ -84,7 +85,7 @@ describe("Carousel", () => {
   });
 
   it("should pause/unpase on hover", async () => {
-    render(
+    const dom = render(
       <Carousel id="test-carousel">
         <CarouselItem>Item 1</CarouselItem>
         <CarouselItem>Item 2</CarouselItem>
@@ -92,9 +93,14 @@ describe("Carousel", () => {
       </Carousel>
     );
 
+    const carousel = getById(dom.container, 'test-carousel')
     const next = screen.getByText("Next");
+
+    expect(carousel).not.toHaveClass('is-paused')
     await userEvent.hover(next);
+    expect(carousel).toHaveClass('is-paused')
     await userEvent.unhover(next);
+    expect(carousel).not.toHaveClass('is-paused')
   });
 
   it("it should be able to use swipe for mobile", () => {
