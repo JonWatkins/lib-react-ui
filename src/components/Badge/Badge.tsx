@@ -5,7 +5,7 @@ import type { BadgeProps } from "./Badge.types";
 export const Badge: FC<BadgeProps> = ({
   id,
   color = "info",
-  size = "md",
+  size = "medium",
   children,
   className,
   ...props

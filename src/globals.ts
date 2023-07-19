@@ -22,7 +22,7 @@ export type ThemeColors =
   | "muted"
   | "white";
 
-export type ThemeSizes = "sm" | "md" | "lg";
+export type ThemeSizes = "tiny" | "small" | "medium" | "large" | "xl";
 
 export type ChildNodes = string | number | ReactNode | ReactNode[];
 

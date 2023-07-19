@@ -6,7 +6,7 @@ export const Icon: FC<IconProps> = ({
   id,
   className,
   type,
-  size = "md",
+  size = "medium",
   color = "dark",
   ...props
 }) => {

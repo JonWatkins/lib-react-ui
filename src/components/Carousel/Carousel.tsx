@@ -88,7 +88,7 @@ export const Carousel: FC<CarouselProps> = ({
             className={classNames("mr-1", "ml-1", "pointer")}
             color={activeIndex === index ? "primary" : "light"}
             onClick={() => updateIndex(index)}
-            size="sm"
+            size="small"
           >
             {index + 1}
           </Badge>

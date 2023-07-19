@@ -3,7 +3,7 @@ import classNames from "classnames";
 import type { ButtonProps } from "./Button.types";
 
 export const Button: FC<ButtonProps> = ({
-  size = "sm",
+  size = "small",
   color = "primary",
   type = "button",
   disabled = false,
@@ -12,7 +12,7 @@ export const Button: FC<ButtonProps> = ({
   onClick,
   ...props
 }) => {
-  const classes = ["btn", `btn-${size}`, `btn-${color}`, className];
+  const classes = [`text-${size}`, `bg-${color}`, className];
   return (
     <button
       className={classNames(classes)}
