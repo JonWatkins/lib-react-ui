@@ -1,12 +1,7 @@
 import React, { FC } from "react";
 import classNames from "classnames";
+import { padding } from "../../utils";
 import type { ButtonProps } from "./Button.types";
-
-const padding = (size: string): string => {
-  if (['xl', 'large'].indexOf(size) !== -1) return 'pt-3 pr-3 pl-3 pb-3'
-  if (size === 'medium') return 'pt-2 pr-2 pl-2 pb-2'
-  return 'pt-1 pr-1 pl-1 pb-1'
-}
 
 export const Button: FC<ButtonProps> = ({
   size = "small",
