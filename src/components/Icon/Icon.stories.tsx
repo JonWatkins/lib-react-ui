@@ -16,12 +16,12 @@ export const Primary: Story = (args) => <Icon {...args} />;
 
 Primary.args = {
   type: "archive",
-  size: "lg",
+  size: "large",
   color: "dark",
 };
 
 export const AvailableSizes: Story = () => {
-  const sizes: ThemeSizes[] = ["sm", "md", "lg"];
+  const sizes: ThemeSizes[] = ["small", "medium", "large"];
   return (
     <>
       {sizes.map((size, index) => (

@@ -22,7 +22,7 @@ Primary.args = {
 };
 
 export const AvailableSizes: Story = () => {
-  const sizes: ThemeSizes[] = ["sm", "md", "lg"];
+  const sizes: ThemeSizes[] = ["small", "medium", "large"];
 
   return (
     <>
