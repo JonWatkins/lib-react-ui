@@ -9,9 +9,8 @@ describe("Button", () => {
   it("should have default classes", () => {
     render(<Button text="Hello World" />);
     const button = screen.getByRole("button")
-    expect(button).toHaveClass("btn");
-    expect(button).toHaveClass("btn-sm");
-    expect(button).toHaveClass("btn-primary");
+    expect(button).toHaveClass("text-small");
+    expect(button).toHaveClass("bg-primary");
     expect(button).toHaveAttribute("type", "button");
   });
 
@@ -39,7 +38,7 @@ describe("Button", () => {
     it(`should be able to set the type of the button to ${color}`, () => {
       render(<Button color={color as ThemeColors} />);
       const button = screen.getByRole("button")
-      expect(button).toHaveClass(`btn-${color}`);
+      expect(button).toHaveClass(`bg-${color}`);
     });
   });
 
@@ -47,7 +46,7 @@ describe("Button", () => {
     it(`should be able to set the size of the button to ${size}`, () => {
       render(<Button size={size} />);
       const button = screen.getByRole("button")
-      expect(button).toHaveClass(`btn-${size}`);
+      expect(button).toHaveClass(`text-${size}`);
     });
   });
 });
