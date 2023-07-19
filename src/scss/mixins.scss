@@ -1,4 +1,4 @@
-@import "../../node_modules/rfs/scss";
+@import "~rfs/scss";
 
 @mixin text-color($val) {
   @if ($val == 'light') {
@@ -17,4 +17,3 @@
     color: var(--white-color);
   }
 }
-
