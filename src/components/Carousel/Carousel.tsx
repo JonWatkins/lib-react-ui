@@ -26,9 +26,9 @@ export const Carousel: FC<CarouselProps> = ({
   timeout = 5000,
   ...props
 }) => {
-  const classes = ["carousel", className];
   const [activeIndex, setActiveIndex] = useState(0);
   const [paused, setPaused] = useState(false);
+  const classes = ["carousel", className];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -65,7 +65,7 @@ export const Carousel: FC<CarouselProps> = ({
   return (
     <div
       id={id}
-      className={classNames(classes)}
+      className={classNames(classes, { 'is-paused': paused })}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       {...handlers}
@@ -88,7 +88,7 @@ export const Carousel: FC<CarouselProps> = ({
             className={classNames("mr-1", "ml-1", "pointer")}
             color={activeIndex === index ? "primary" : "light"}
             onClick={() => updateIndex(index)}
-            size="sm"
+            size="small"
           >
             {index + 1}
           </Badge>

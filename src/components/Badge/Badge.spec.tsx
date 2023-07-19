@@ -13,7 +13,7 @@ describe("Badge", () => {
     const badge = getById(dom.container, "test-badge")
     expect(badge).toHaveClass("badge");
     expect(badge).toHaveClass("badge-info");
-    expect(badge).toHaveClass("badge-md");
+    expect(badge).toHaveClass("badge-medium");
   });
 
   it("should be able to render content", () => {

@@ -3,11 +3,10 @@
 @import "mixins";
 @import "reset";
 @import "typeography";
-@import "links";
+@import "colors";
 @import "spacing";
 @import "general";
 @import "image";
-@import "Button";
 @import "Input";
 @import "Select";
 @import "ListGroup";
@@ -17,3 +16,8 @@
 @import "Alerts";
 @import "Badge";
 @import "Carousel";
+
+@import "./Utilities/Spacing";
+@import "./Utilities/Table";
+@import "./Utilities/Typography";
+

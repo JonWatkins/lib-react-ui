@@ -11,6 +11,7 @@ $warning: #F8B425;
 $info: #38A5F8;
 $lightest: #F8F8FA;
 $light: lighten(#575C62, 50%);
+$lightDark: lighten(#575C62, 35%);
 $dark: #575C62;
 $muted: #EDECF1;
 $white: white;
@@ -64,7 +65,7 @@ $spacing: (
   22, 23, 24 
 );
 
-$font-size: 1em;
+$font-size: 16px;
 $font-ratio: 1.2;
 
 $border-radius: .25rem;

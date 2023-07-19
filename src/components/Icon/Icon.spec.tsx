@@ -12,7 +12,7 @@ describe("Icon", () => {
     const dom = render(<Icon id="test-icon" />);
     const icon = getById(dom.container, "test-icon");
     expect(icon).toHaveClass("icon");
-    expect(icon).toHaveClass("icon-md");
+    expect(icon).toHaveClass("icon-medium");
     expect(icon).toHaveClass("text-dark");
   });
 
