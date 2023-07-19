@@ -17,16 +17,14 @@ describe("Carousel", () => {
 
   it("Should be able to render an carousel item", () => {
     const dom = render(<CarouselItem id="test-carousel" />);
-    const carousel = getById(dom.container, "test-carousel")
-    expect(carousel).toHaveAttribute('style', 'width: 100%;')
-    expect(carousel).toHaveClass(
-      "carousel-item"
-    );
+    const carousel = getById(dom.container, "test-carousel");
+    expect(carousel).toHaveAttribute("style", "width: 100%;");
+    expect(carousel).toHaveClass("carousel-item");
   });
 
   it("Should be able to render an carousel", () => {
     const dom = render(<Carousel id="test-carousel" />);
-    const carousel = getById(dom.container, "test-carousel")
+    const carousel = getById(dom.container, "test-carousel");
     expect(carousel).toHaveClass("carousel");
   });
 
@@ -93,14 +91,14 @@ describe("Carousel", () => {
       </Carousel>
     );
 
-    const carousel = getById(dom.container, 'test-carousel')
+    const carousel = getById(dom.container, "test-carousel");
     const next = screen.getByText("Next");
 
-    expect(carousel).not.toHaveClass('is-paused')
+    expect(carousel).not.toHaveClass("is-paused");
     await userEvent.hover(next);
-    expect(carousel).toHaveClass('is-paused')
+    expect(carousel).toHaveClass("is-paused");
     await userEvent.unhover(next);
-    expect(carousel).not.toHaveClass('is-paused')
+    expect(carousel).not.toHaveClass("is-paused");
   });
 
   it("it should be able to use swipe for mobile", () => {

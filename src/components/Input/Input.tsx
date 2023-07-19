@@ -32,7 +32,7 @@ const RenderInput: ForwardRefRenderFunction<
   placeholder,
   disabled,
   className,
-  type = 'text',
+  type = "text",
   required,
   value,
   onChange,
