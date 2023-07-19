@@ -11,14 +11,14 @@ describe("ListGroup", () => {
   describe("ListGroup", () => {
     it("should have the list-group-item class", () => {
       const dom = render(<ListGroupItem id="item">Test</ListGroupItem>);
-      const item = getById(dom.container, "item")
+      const item = getById(dom.container, "item");
       expect(item).toHaveClass("list-group-item");
     });
   });
 
   it("should have the list-group class", () => {
     const dom = render(<ListGroup id="test-id" />);
-    const group = getById(dom.container, "test-id")
+    const group = getById(dom.container, "test-id");
     expect(group).toHaveClass("list-group");
   });
 
@@ -46,9 +46,9 @@ describe("ListGroup", () => {
       </ListGroup>
     );
 
-    const item = getById(dom.container, "item1")
-    const link = getById(dom.container, "link")
-    const button = screen.getByRole("button")
+    const item = getById(dom.container, "item1");
+    const link = getById(dom.container, "link");
+    const button = screen.getByRole("button");
 
     expect(item).toHaveTextContent("Test");
     expect(link).toHaveTextContent("testing");

@@ -65,7 +65,7 @@ export const Carousel: FC<CarouselProps> = ({
   return (
     <div
       id={id}
-      className={classNames(classes, { 'is-paused': paused })}
+      className={classNames(classes, { "is-paused": paused })}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       {...handlers}
