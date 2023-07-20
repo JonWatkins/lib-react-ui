@@ -7,7 +7,7 @@ type Story = StoryObj<typeof Badge>;
 
 const meta: Meta<typeof Badge> = {
   component: Badge,
-  title: "Badge",
+  title: "Components/Badge",
   argTypes: {},
 };
 

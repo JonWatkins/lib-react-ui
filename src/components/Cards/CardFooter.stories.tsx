@@ -6,11 +6,11 @@ type Story = StoryObj<typeof CardFooter>;
 
 const meta: Meta<typeof CardFooter> = {
   component: CardFooter,
-  title: "CardFooter",
+  title: "Components/CardFooter",
   argTypes: {},
 };
 
-export const Primary: Story = (args) => <CardFooter>Lorem Ipsum</CardFooter>;
+export const Primary: Story = () => <CardFooter>Lorem Ipsum</CardFooter>;
 
 Primary.args = {};
 

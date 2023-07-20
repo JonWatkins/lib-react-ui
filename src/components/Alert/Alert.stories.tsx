@@ -7,7 +7,7 @@ type Story = StoryObj<typeof Alert>;
 
 const meta: Meta<typeof Alert> = {
   component: Alert,
-  title: "Alert",
+  title: "Components/Alert",
   argTypes: {},
 };
 

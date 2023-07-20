@@ -8,7 +8,7 @@ type Story = StoryObj<typeof Select>;
 
 const meta: Meta<typeof Select> = {
   component: Select,
-  title: "Select",
+  title: "Components/Select",
   argTypes: {},
 };
 

@@ -7,7 +7,7 @@ type Story = StoryObj<typeof ListGroupItem>;
 
 const meta: Meta<typeof ListGroupItem> = {
   component: ListGroupItem,
-  title: "ListGroupItem",
+  title: "Components/ListGroupItem",
   argTypes: {},
 };
 

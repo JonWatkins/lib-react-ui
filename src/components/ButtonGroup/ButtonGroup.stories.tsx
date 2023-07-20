@@ -7,7 +7,7 @@ type Story = StoryObj<typeof ButtonGroup>;
 
 const meta: Meta<typeof ButtonGroup> = {
   component: ButtonGroup,
-  title: "Button Group",
+  title: "Components/Button Group",
   argTypes: {},
 };
 

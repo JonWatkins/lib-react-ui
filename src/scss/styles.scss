@@ -1,8 +1,7 @@
+@import "~normalize.css/normalize";
+@import "~rfs/scss";
+
 @import "settings";
-@import "variables";
-@import "mixins";
-@import "reset";
-@import "typeography";
 @import "general";
 @import "image";
 @import "Input";
@@ -11,7 +10,6 @@
 @import "Card";
 @import "Icon";
 @import "Grid";
-@import "Badge";
 @import "Carousel";
 
 @import "./Utilities/Borders";

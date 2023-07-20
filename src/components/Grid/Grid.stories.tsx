@@ -6,7 +6,7 @@ type Story = StoryObj<typeof Grid>;
 
 const meta: Meta<typeof Grid> = {
   component: Grid,
-  title: "Grid",
+  title: "Components/Grid",
   argTypes: {},
 };
 
@@ -33,7 +33,7 @@ Primary.args = {
   fluid: false,
 };
 
-export const Fluid: Story = (args) => (
+export const Fluid: Story = () => (
   <Grid fluid>
     <GridRow className="mb-6">
       <GridColumn colWidth="6">

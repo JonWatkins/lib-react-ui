@@ -8,11 +8,11 @@ type Story = StoryObj<typeof ListGroup>;
 
 const meta: Meta<typeof ListGroup> = {
   component: ListGroup,
-  title: "ListGroup",
+  title: "Components/ListGroup",
   argTypes: {},
 };
 
-export const Primary: Story = (args) => (
+export const Primary: Story = () => (
   <ListGroup>
     <ListGroupItem>Lorem ipsum</ListGroupItem>
     <ListGroupItem>Lorem ipsum</ListGroupItem>
@@ -22,7 +22,7 @@ export const Primary: Story = (args) => (
 
 Primary.args = {};
 
-export const UsingHTMLElements: Story = (args) => (
+export const UsingHTMLElements: Story = () => (
   <ListGroup>
     <ListGroupItem>
       <a href="">Lorem ipsum</a>
@@ -39,7 +39,7 @@ export const UsingHTMLElements: Story = (args) => (
 
 UsingHTMLElements.args = {};
 
-export const UsingReactElements: Story = (args) => (
+export const UsingReactElements: Story = () => (
   <ListGroup>
     <ListGroupItem>
       <Input label="Enter Your Name" />

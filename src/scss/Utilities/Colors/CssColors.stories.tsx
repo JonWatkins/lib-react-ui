@@ -4,11 +4,11 @@ import { Meta, StoryObj } from "@storybook/react";
 type Story = StoryObj;
 
 const meta: Meta<Story> = {
-  title: "CSS Typeography",
+  title: "CSS/Colors",
   argTypes: {},
 };
 
-export const Primary: Story = (args) => <div></div>;
+export const Primary: Story = () => <div></div>;
 
 Primary.args = {};
 

@@ -8,11 +8,11 @@ type Story = StoryObj<typeof InputGroup>;
 
 const meta: Meta<typeof InputGroup> = {
   component: InputGroup,
-  title: "InputGroup",
+  title: "Components/InputGroup",
   argTypes: {},
 };
 
-export const Primary: Story = (args) => (
+export const Primary: Story = () => (
   <InputGroup>
     <Input />
     <Button text="Search" />

@@ -6,11 +6,11 @@ type Story = StoryObj<typeof CarouselItem>;
 
 const meta: Meta<typeof CarouselItem> = {
   component: CarouselItem,
-  title: "CarouselItem",
+  title: "Components/CarouselItem",
   argTypes: {},
 };
 
-export const Primary: Story = (args) => <CarouselItem>Item 3</CarouselItem>;
+export const Primary: Story = () => <CarouselItem>Item 3</CarouselItem>;
 
 Primary.args = {};
 
