@@ -1,5 +1,31 @@
 @use "sass:color";
 
+$primary: #626ED4;
+$secondary: #343549;
+$success: #2AA39A;
+$danger: #EC4561;
+$warning: #F8B425;
+$info: #38A5F8;
+$lightest: #F8F8FA;
+$light: lighten(#575C62, 50%);
+$lightDark: lighten(#575C62, 35%);
+$dark: #575C62;
+$muted: #EDECF1;
+$white: white;
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "danger": $danger,
+  "warning": $warning,
+  "info": $info,
+  "lightest": $lightest,
+  "light": $light,
+  "dark": $dark,
+  "muted": $muted,
+);
+
 $palette : (
   100 : 40%,
   200 : 30%,
@@ -20,6 +46,16 @@ $opacities: (
 );
 
 @mixin colorPalette($propertyName) {
+  &-white {
+    #{$propertyName}: $white;
+  }
+
+  @each $opacticy, $alpha in $opacities {
+    &-white\/#{$opacticy} {
+      #{$propertyName}: color.scale($white, $alpha: $alpha);
+    }
+  }
+
   @each $name, $color in $theme-colors {
     &-#{$name} {
       #{$propertyName}: $color;

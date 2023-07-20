@@ -22,6 +22,19 @@ export type ThemeColors =
   | "muted"
   | "white";
 
+export type ThemeColorWeights =
+  | "100"
+  | "200"
+  | "300"
+  | "400"
+  | "500"
+  | "600"
+  | "700"
+  | "800"
+  | "900";
+
+export type ThemeOpacities = "100" | "75" | "50" | "25";
+
 export type ThemeSizes = "tiny" | "small" | "medium" | "large" | "xl";
 
 export type ChildNodes = string | number | ReactNode | ReactNode[];
