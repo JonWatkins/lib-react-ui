@@ -1,15 +1,137 @@
-@each $side, $value in $sides {
-  .m#{$side}-auto{
-    margin-#{$value}: auto;
-  }
-  @each $space in $spacing {
-    $calculatedSpace: calc($space/4);
+$spacing-sides : (
+  "t": "top",
+  "r": "right",
+  "b": "bottom",
+  "l": "left",
+  "x": "left-right",
+  "y": "top-bottom",
+  "xy": "all",
+);
 
-    .m#{$side}-#{$space} {
-      margin-#{$value}: #{$calculatedSpace}rem !important;
+$spacing: (
+  0: 0,
+  1: 1rem, 
+  2: 2rem,
+  3: 3rem,
+  4: 4rem,
+  5: 5rem,
+  6: 6rem,
+  7: 7rem,
+  8: 8rem,
+  9: 9rem,
+  10: 10rem,
+  11: 11rem,
+  12: 12rem,
+  13: 13rem,
+  14: 14rem,
+  15: 15rem,
+  16: 16rem,
+  17: 17rem,
+  18: 18rem,
+  19: 19rem,
+  20: 20rem,
+  21: 21rem,
+  22: 22rem,
+  23: 23rem,
+  24: 24rem,
+);
+
+/* Padding */
+
+@each $side, $value in $spacing-sides {
+  @each $space, $spaceValue in $spacing {
+    @if ($value == "top") {
+      .p#{$side}-#{$space} {
+        @include padding-top($spaceValue)
+      }
     }
-    .p#{$side}-#{$space} {
-      padding-#{$value}: #{$calculatedSpace}rem !important;
+    @if ($value == "right") {
+      .p#{$side}-#{$space} {
+        @include padding-right($spaceValue)
+      }
+    }
+    @if ($value == "bottom") {
+      .p#{$side}-#{$space} {
+        @include padding-bottom($spaceValue)
+      }
+    }
+    @if ($value == "left") {
+      .p#{$side}-#{$space} {
+        @include padding-left($spaceValue)
+      }
+    }
+    @if ($value == 'left-right') {
+      .p#{$side}-#{$space} {
+        @include padding-left($spaceValue);
+        @include padding-right($spaceValue);
+      }
+    }
+    @if ($value == "top-bottom") {
+      .p#{$side}-#{$space} {
+        @include padding-top($spaceValue);
+        @include padding-bottom($spaceValue);
+      }
+    }
+    @if ($value == 'all') {
+      .p#{$side}-#{$space} {
+        @include padding($spaceValue)
+      }
     }
   }
 }
+
+@each $side, $value in $spacing-sides {
+  @each $space, $spaceValue in $spacing {
+    @if ($value == "top") {
+      .m#{$side}-#{$space} {
+        @include margin-top($spaceValue)
+      }
+    }
+
+    @if ($value == "right") {
+      .m#{$side}-#{$space} {
+        @include margin-right($spaceValue)
+      }
+    }
+
+    @if ($value == "bottom") {
+      .m#{$side}-#{$space} {
+        @include margin-bottom($spaceValue)
+      }
+    }
+
+    @if ($value == "left") {
+      .m#{$side}-#{$space} {
+        @include margin-left($spaceValue)
+      }
+    }
+
+    @if ($value == 'left-right') {
+      .m#{$side}-#{$space} {
+        @include margin-left($spaceValue);
+        @include margin-right($spaceValue);
+      }
+    }
+
+    @if ($value == "top-bottom") {
+      .m#{$side}-#{$space} {
+        @include margin-top($spaceValue);
+        @include margin-bottom($spaceValue);
+      }
+    }
+
+    @if ($value == 'all') {
+      .m#{$side}-#{$space} {
+        @include margin($spaceValue)
+      }
+    }
+  }
+}
+
+.mx-auto {
+  margin: 0 auto;
+}
+.my-auto {
+  margin: auto 0;
+}
+
