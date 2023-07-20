@@ -11,8 +11,7 @@ describe("Alert", () => {
   it("Should be able to render an alert", () => {
     const dom = render(<Alert id="test-alert" />);
     const alert = getById(dom.container, "test-alert");
-    expect(alert).toHaveClass("alert");
-    expect(alert).toHaveClass("alert-info");
+    expect(alert).toHaveClass("bg-info/75");
   });
 
   it("should be able to render content", () => {
@@ -25,7 +24,7 @@ describe("Alert", () => {
     it(`should be able to set the type of the alert to ${color}`, () => {
       const dom = render(<Alert id="test-alert" type={color as ThemeColors} />);
       const alert = getById(dom.container, "test-alert");
-      expect(alert).toHaveClass(`alert-${color}`);
+      expect(alert).toHaveClass(`bg-${color}/75`);
     });
   });
 });

@@ -17,6 +17,7 @@ export const Button: FC<ButtonProps> = ({
     `text-${size}`,
     `bg-${color}`,
     "border-0",
+    "rounded",
     padding(size),
     inverseTextColor(color),
     className,
