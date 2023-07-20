@@ -39,7 +39,7 @@ export const AvailableColors: Story = () => {
   return (
     <>
       {colors.map((color, index) => (
-        <Alert id="test-alert" type={color} key={index} className="mb-3">
+        <Alert id="test-alert" type={color} key={index} className="mb-1">
           Lorem ipsum dolor!
         </Alert>
       ))}

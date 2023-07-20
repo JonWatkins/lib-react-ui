@@ -1,5 +1,3 @@
-@use "sass:color";
-
 .border-0 {
   border: 0;
 }
@@ -12,16 +10,6 @@ $border-types:(
   solid,
   dashed,
 );
-
-@each $type, $class in $theme-colors {
-  .border-#{$type} {
-    border-color: $class;
-  }
-
-  .border-#{$type}-300 {
-    border-color: color.scale($class, $lightness: -30%)
-  }
-}
 
 @each $type in $border-types {
   .border-#{$type} {

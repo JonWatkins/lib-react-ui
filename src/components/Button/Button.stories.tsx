@@ -50,7 +50,7 @@ export const AvailableSizes: Story = () => {
   return (
     <>
       {sizes.map((size, index) => (
-        <Button key={index} size={size} text={size} className="mr-4 mb-4" />
+        <Button key={index} size={size} text={size} className="mr-1 mb-1" />
       ))}
     </>
   );
@@ -76,7 +76,7 @@ export const AvailableColors: Story = () => {
   return (
     <>
       {colors.map((color, index) => (
-        <Button key={index} color={color} text={color} className="mr-4 mb-4" />
+        <Button key={index} color={color} text={color} className="mr-1 mb-1" />
       ))}
     </>
   );

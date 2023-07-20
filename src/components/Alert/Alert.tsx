@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import classNames from "classnames";
-import { padding, inverseTextColor } from "../../utils";
+import { inverseTextColor } from "../../utils";
 import type { AlertProps } from "./Alert.types";
 
 export const Alert: FC<AlertProps> = ({
@@ -15,9 +15,8 @@ export const Alert: FC<AlertProps> = ({
     "rounded",
     "border-1",
     "border-solid",
-    `border-${type}`,
-    `border-${type}-300`,
-    padding("large"),
+    `border-${type}-700`,
+    "pxy-1",
     inverseTextColor(type),
     className,
   ];

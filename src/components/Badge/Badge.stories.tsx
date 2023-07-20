@@ -27,7 +27,7 @@ export const AvailableSizes: Story = () => {
   return (
     <>
       {sizes.map((size, index) => (
-        <Badge key={index} size={size} color="primary" className="mr-4 mb-4">
+        <Badge key={index} size={size} color="primary" className="mr-1 mb-1">
           0
         </Badge>
       ))}
@@ -55,7 +55,7 @@ export const AvailableColors: Story = () => {
   return (
     <>
       {colors.map((color, index) => (
-        <Badge id="test-Badge" className="mr-4" color={color} key={index}>
+        <Badge id="test-Badge" className="mr-1 mb-1" color={color} key={index}>
           0
         </Badge>
       ))}
