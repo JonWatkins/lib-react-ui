@@ -1,3 +1,5 @@
+@use "sass:color";
+
 @each $type, $class in $theme-colors {
 	.link-#{$type} {
 		color: $class;
@@ -22,9 +24,5 @@
 
   .text-#{$type} {
     color: $class;
-  }
-
-  .bg-#{$type} {
-    background-color: $class;
   }
 }

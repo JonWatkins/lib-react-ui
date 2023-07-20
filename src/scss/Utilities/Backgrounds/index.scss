@@ -1,0 +1,13 @@
+@use "sass:color";
+
+@each $type, $class in $theme-colors {
+  .bg-#{$type} {
+    background-color: $class;
+  }
+
+  @each $opacticy, $percent in $opacities {
+    .bg-#{$type}\/#{$opacticy} {
+      background-color: color.scale($class, $alpha: $percent);
+    }
+  }
+}
