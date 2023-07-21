@@ -10,34 +10,6 @@ $spacing-sides : (
   "xy": "all",
 );
 
-$spacing: (
-  0: 0,
-  1: 1rem, 
-  2: 2rem,
-  3: 3rem,
-  4: 4rem,
-  5: 5rem,
-  6: 6rem,
-  7: 7rem,
-  8: 8rem,
-  9: 9rem,
-  10: 10rem,
-  11: 11rem,
-  12: 12rem,
-  13: 13rem,
-  14: 14rem,
-  15: 15rem,
-  16: 16rem,
-  17: 17rem,
-  18: 18rem,
-  19: 19rem,
-  20: 20rem,
-  21: 21rem,
-  22: 22rem,
-  23: 23rem,
-  24: 24rem,
-);
-
 /* Padding */
 @function str-replace($string, $search, $replace: '') {
   $index: str-index($string, $search);
@@ -49,152 +21,63 @@ $spacing: (
   @return $string;
 }
 
-@for $i from 1 through 9 {
-  $smallSize: ($i / 10);
-  $smallRem: ($smallSize + "rem");
+@for $i from 1 through 100 {
+  $smallSize: calc($i * 0.25);
+  $remValue: ($smallSize * 1rem);
   $escapedStr: str-replace($smallSize + '', '.', \.);
   @each $side, $value in $spacing-sides {
-    @if ($value == "top") {
+    @if ($value == "top")  {
       .p#{$side}-#{$escapedStr} {
-        @include padding-top($smallRem)
+        @include padding-top($remValue)
       }
-    }
-    @if ($value == "right") {
+      .m#{$side}-#{$escapedStr} {
+        @include margin-top($remValue)
+      }
+    } @else if ($value == "right") {
       .p#{$side}-#{$escapedStr} {
-        @include padding-right($smallRem)
+        @include padding-right($remValue)
       }
-    }
-    @if ($value == "bottom") {
+      .m#{$side}-#{$escapedStr} {
+        @include margin-right($remValue)
+      }
+    } @else if ($value == "bottom") {
       .p#{$side}-#{$escapedStr} {
-        @include padding-bottom($smallRem)
+        @include padding-bottom($remValue)
       }
-    }
-    @if ($value == "left") {
+      .m#{$side}-#{$escapedStr} {
+        @include margin-bottom($remValue)
+      }
+    } @else if ($value == "left") {
       .p#{$side}-#{$escapedStr} {
-        @include padding-left($smallRem)
+        @include padding-left($remValue)
       }
-    }
-  }
-}
-
-@each $side, $value in $spacing-sides {
-  @each $space, $spaceValue in $spacing {
-    @if ($value == "top") {
-      .p#{$side}-#{$space} {
-        @include padding-top($spaceValue)
-      }
-    }
-    @if ($value == "right") {
-      .p#{$side}-#{$space} {
-        @include padding-right($spaceValue)
-      }
-    }
-    @if ($value == "bottom") {
-      .p#{$side}-#{$space} {
-        @include padding-bottom($spaceValue)
-      }
-    }
-    @if ($value == "left") {
-      .p#{$side}-#{$space} {
-        @include padding-left($spaceValue)
-      }
-    }
-    @if ($value == 'left-right') {
-      .p#{$side}-#{$space} {
-        @include padding-left($spaceValue);
-        @include padding-right($spaceValue);
-      }
-    }
-    @if ($value == "top-bottom") {
-      .p#{$side}-#{$space} {
-        @include padding-top($spaceValue);
-        @include padding-bottom($spaceValue);
-      }
-    }
-    @if ($value == 'all') {
-      .p#{$side}-#{$space} {
-        @include padding($spaceValue)
-      }
-    }
-  }
-}
-
-@for $i from 1 through 9 {
-  $smallSize: ($i / 10);
-  $smallRem: ($smallSize + "rem");
-  $escapedStr: str-replace($smallSize + '', '.', \.);
-
-  @each $side,
-  $value in $spacing-sides {
-    @if ($value =="top") {
       .m#{$side}-#{$escapedStr} {
-        @include margin-top($smallRem)
+        @include margin-left($remValue)
       }
-    }
-
-    @if ($value =="right") {
+    } @else if ($value == "top-bottom") {
+      .p#{$side}-#{$escapedStr} {
+        @include padding-top($remValue);
+        @include padding-bottom($remValue);
+      }
       .m#{$side}-#{$escapedStr} {
-        @include margin-right($smallRem)
+        @include margin-top($remValue);
+        @include margin-bottom($remValue);
       }
-    }
-
-    @if ($value =="bottom") {
+    } @else if ($value == "left-right") {
+      .p#{$side}-#{$escapedStr} {
+        @include padding-right($remValue);
+        @include padding-left($remValue);
+      }
       .m#{$side}-#{$escapedStr} {
-        @include margin-bottom($smallRem)
+        @include margin-right($remValue);
+        @include margin-left($remValue);
       }
-    }
-
-    @if ($value =="left") {
-      .m#{$side}-#{$escapedStr} {
-        @include margin-left($smallRem)
+    } @else {
+      .p-#{$escapedStr} {
+        @include padding($remValue)
       }
-    }
-  }
-}
-
-@each $side, $value in $spacing-sides {
-  @each $space, $spaceValue in $spacing {
-    @if ($value == "top") {
-      .m#{$side}-#{$space} {
-        @include margin-top($spaceValue)
-      }
-    }
-
-    @if ($value == "right") {
-      .m#{$side}-#{$space} {
-        @include margin-right($spaceValue)
-      }
-    }
-
-    @if ($value == "bottom") {
-      .m#{$side}-#{$space} {
-        @include margin-bottom($spaceValue)
-      }
-    }
-
-    @if ($value == "left") {
-      .m#{$side}-#{$space} {
-        @include margin-left($spaceValue)
-      }
-    }
-
-    @if ($value == 'left-right') {
-      .m#{$side}-#{$space} {
-        @include margin-left($spaceValue);
-        @include margin-right($spaceValue);
-      }
-    }
-
-    @if ($value == "top-bottom") {
-      .m#{$side}-#{$space} {
-        @include margin-top($spaceValue);
-        @include margin-bottom($spaceValue);
-      }
-    }
-
-    @if ($value == 'all') {
-      .m#{$side}-#{$space} {
-        @include margin($spaceValue)
+      .m-#{$escapedStr} {
+        @include margin($remValue)
       }
     }
   }
@@ -206,4 +89,3 @@ $spacing: (
 .my-auto {
   margin: auto 0;
 }
-
