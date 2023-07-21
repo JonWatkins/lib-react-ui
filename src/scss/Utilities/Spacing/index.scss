@@ -1,3 +1,5 @@
+@use "sass:string";
+
 $spacing-sides : (
   "t": "top",
   "r": "right",
@@ -37,6 +39,43 @@ $spacing: (
 );
 
 /* Padding */
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1)+$replace +str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
+}
+
+@for $i from 1 through 9 {
+  $smallSize: ($i / 10);
+  $smallRem: ($smallSize + "rem");
+  $escapedStr: str-replace($smallSize + '', '.', \.);
+  @each $side, $value in $spacing-sides {
+    @if ($value == "top") {
+      .p#{$side}-#{$escapedStr} {
+        @include padding-top($smallRem)
+      }
+    }
+    @if ($value == "right") {
+      .p#{$side}-#{$escapedStr} {
+        @include padding-right($smallRem)
+      }
+    }
+    @if ($value == "bottom") {
+      .p#{$side}-#{$escapedStr} {
+        @include padding-bottom($smallRem)
+      }
+    }
+    @if ($value == "left") {
+      .p#{$side}-#{$escapedStr} {
+        @include padding-left($smallRem)
+      }
+    }
+  }
+}
 
 @each $side, $value in $spacing-sides {
   @each $space, $spaceValue in $spacing {
@@ -75,6 +114,39 @@ $spacing: (
     @if ($value == 'all') {
       .p#{$side}-#{$space} {
         @include padding($spaceValue)
+      }
+    }
+  }
+}
+
+@for $i from 1 through 9 {
+  $smallSize: ($i / 10);
+  $smallRem: ($smallSize + "rem");
+  $escapedStr: str-replace($smallSize + '', '.', \.);
+
+  @each $side,
+  $value in $spacing-sides {
+    @if ($value =="top") {
+      .m#{$side}-#{$escapedStr} {
+        @include margin-top($smallRem)
+      }
+    }
+
+    @if ($value =="right") {
+      .m#{$side}-#{$escapedStr} {
+        @include margin-right($smallRem)
+      }
+    }
+
+    @if ($value =="bottom") {
+      .m#{$side}-#{$escapedStr} {
+        @include margin-bottom($smallRem)
+      }
+    }
+
+    @if ($value =="left") {
+      .m#{$side}-#{$escapedStr} {
+        @include margin-left($smallRem)
       }
     }
   }
