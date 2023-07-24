@@ -1,0 +1,58 @@
+$sizes:( 
+  "tiny",
+  "small",
+  "medium",
+  "large",
+);
+
+@mixin button-size($size) {
+  &-#{$size} {
+    @if ($size == "tiny") {
+      @extend .text-tiny;
+      @extend .px-0\.5;
+      @extend .py-0\.25;      
+    } @else if ($size == "small") {
+      @extend .text-small;
+      @extend .px-0\.75;
+      @extend .py-0\.5; 
+    } @else if ($size == "medium") {
+      @extend .text-default;
+      @extend .px-1;
+      @extend .py-0\.75;         
+    } @else if ($size == "large") {
+      @extend .text-large;
+      @extend .px-1\.5;
+      @extend .py-1;
+    }
+  }
+}
+
+@mixin button-color($color, $hex) {
+  &-#{$color} {
+    @extend .bg-#{$color};
+    @extend .border-#{$color};
+    @include inverse-color('text', $color);
+
+    &:hover {
+      @if ($color != "white") {
+        @extend .bg-#{$color}-600;
+      } @else {
+        @extend .bg-light;
+      }
+    }
+  }
+}
+
+.btn {
+  @extend .rounded-medium;
+  @extend .border-1;
+  @extend .border-solid;
+
+  @each $size in $sizes {
+    @include button-size($size);
+  }
+
+  @each $color, $hex in $theme-colors {
+    @include button-color($color, $hex)
+  }
+}

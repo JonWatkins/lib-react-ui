@@ -24,6 +24,16 @@ $theme-colors: (
   "light": $light,
   "dark": $dark,
   "muted": $muted,
+  "white": $white,
+);
+
+$light-colors: (
+  "primary",
+  "secondary",
+  "success",
+  "danger",
+  "warning",
+  "info",
 );
 
 $palette : (
@@ -45,74 +55,94 @@ $opacities: (
   "25": -75%,
 );
 
-@mixin colorPalette($propertyName) {
-  &-white {
-    #{$propertyName}: $white;
+$light-colors: (
+  "primary",
+  "secondary",
+  "success",
+  "danger",
+  "warning",
+  "info",
+);
+
+$weights: (
+  100: 40%,
+  200: 30%,
+  300: 20%,
+  400: 10%,
+  500: 0%,
+  600: 10%,
+  700: 20%,
+  800: 30%,
+  900: 40%,
+);
+
+$opacities: (
+  100: 1,
+  75: 0.75,
+  50: 0.5,
+  25: 0.25,
+);
+
+@mixin applyColorPalette($className, $property, $darkMode: false) {
+  .#{$className}-white {
+    #{$property}: $white;
   }
 
-  @each $opacticy, $alpha in $opacities {
-    &-white\/#{$opacticy} {
-      #{$propertyName}: color.scale($white, $alpha: $alpha);
-    }
-  }
+  @each $color, $hex in $theme-colors {
+    @if ($color != "white") {
+      $classWithPrexix: if($darkMode, dark\:#{$className}, #{$className});
+      $hoverClassName: if($darkMode, dark\:hover\:#{$className}, hover\:#{$className});
 
-  @each $name, $color in $theme-colors {
-    &-#{$name} {
-      #{$propertyName}: $color;
-    }
+      .#{$classWithPrexix}-#{$color},
+        .#{$hoverClassName}-#{$color}:hover {
+          #{$property}: $hex;
 
-    @each $opacticy, $alpha in $opacities {
-      &-#{$name}\/#{$opacticy} {
-        #{$propertyName}: color.scale($color, $alpha: $alpha);
-      }
-    }
-
-    @each $weight, $percent in $palette {
-      @if $weight < 500 {
-        &-#{$name}-#{$weight} {
-          #{$propertyName}: lighten($color, $percent);
-        }
-      } @else if $weight > 500 {
-        &-#{$name}-#{$weight} {
-          #{$propertyName}: darken($color, $percent);
-        }      
-      } @else {
-        &-#{$name}-#{$weight} {
-          #{$propertyName}: $color;
-        }        
-      }
-
-      @each $opacticy, $alpha in $opacities {
-        @if $weight < 500 {
-          &-#{$name}-#{$weight}\/#{$opacticy} {
-            #{$propertyName}: color.scale(lighten($color, $percent), $alpha: $alpha);
+          @each $opacity, $alpha in $opacities {
+            &\/#{$opacity} {
+              #{$property}: rgba($hex, $alpha);
+            }
           }
-        } @else if $weight > 500 {
-          &-#{$name}-#{$weight}\/#{$opacticy} {
-            #{$propertyName}: color.scale(darken($color, $percent), $alpha: $alpha);
-          }      
-        } @else {
-          &-#{$name}-#{$weight}\/#{$opacticy} {
-            #{$propertyName}: color.scale($color, $alpha: $alpha);
-          }        
         }
-      }    
+
+      @each $weight, $value in $weights {
+        $background-color: if($weight < 500, lighten($hex, abs($value)), darken($hex, $value));
+
+        .#{$classWithPrexix}-#{$color}-#{$weight},
+        .#{$hoverClassName}-#{$color}-#{$weight}:hover {
+          #{$property}: $background-color;
+
+          @each $opacity, $alpha in $opacities {
+            &\/#{$opacity} {
+              #{$property}: rgba($background-color, $alpha);
+            }
+          }
+        }
+      }
     }
   }
 }
 
-.bg {
-  @include colorPalette(background-color)
+@mixin inverse-color($type, $colorKey) {
+  $color: map-get($theme-colors, $colorKey);
+  $opposite-color: if(index($light-colors, $colorKey) != null, true, false);
+  @if not $opposite-color {
+    $lightness: lightness($color);
+    @if($lightness >= 50) {
+      @extend .#{$type}-dark;
+    } @else {
+      @extend .#{$type}-white;
+    }
+  } @else {
+    @extend .#{$type}-white;
+  }
 }
 
-.text {
-  @include colorPalette(color)
-}
+@include applyColorPalette('bg', background-color);
+@include applyColorPalette('text', color);
+@include applyColorPalette('border', border-color);
 
-.border {
-  @include colorPalette(border-color)
-}
-
-.link {
-  @include colorPalette(color)
+@media (prefers-color-scheme: dark) {
+  @include applyColorPalette('bg', background-color, true);
+  @include applyColorPalette('text', color, true);
+  @include applyColorPalette('border', border-color, true);
 }

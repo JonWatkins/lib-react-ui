@@ -1,10 +1,9 @@
 import React, { FC } from "react";
 import classNames from "classnames";
-import { padding, inverseTextColor } from "../../utils";
 import type { ButtonProps } from "./Button.types";
 
 export const Button: FC<ButtonProps> = ({
-  size = "small",
+  size = "medium",
   color = "primary",
   type = "button",
   disabled = false,
@@ -13,15 +12,7 @@ export const Button: FC<ButtonProps> = ({
   onClick,
   ...props
 }) => {
-  const classes = [
-    `text-${size}`,
-    `bg-${color}`,
-    "border-0",
-    "rounded",
-    padding(size),
-    inverseTextColor(color),
-    className,
-  ];
+  const classes = [`btn`, `btn-${color}`, `btn-${size}`, className];
 
   return (
     <button

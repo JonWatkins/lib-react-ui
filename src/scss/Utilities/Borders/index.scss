@@ -1,22 +1,51 @@
-.border-0 {
-  border: 0;
-}
-
-.border-1 {
-  border-width: 1px;
-}
-
-$border-types:(
-  solid,
-  dashed,
+// Define your border style options
+$border-styles: (
+  "solid": solid,
+  "dashed": dashed,
+  "dotted": dotted,
+  "double": double,
+  "groove": groove,
+  "ridge": ridge,
+  "inset": inset,
+  "outset": outset,
+  "none": none,
 );
 
-@each $type in $border-types {
-  .border-#{$type} {
-    border-style: $type;
+// Define your border width options
+$border-widths: (
+  "0": 0,
+  "1": 1px,
+  "2": 2px,
+  "3": 3px,
+  "4": 4px,
+  "5": 5px,
+);
+
+// Define your border radius options
+$border-radii: (
+  "none": 0,
+  "small": 0.2rem,
+  "medium": 0.4rem,
+  "large": 0.6rem,
+  "xl": 1rem,
+  "full": 9999px, // Use a large value for a circle
+);
+
+// Mixin to generate utility classes
+@each $style, $value in $border-styles {
+  .border-#{$style} {
+    border-style: #{$value};
   }
 }
 
-.rounded {
-  border-radius: $border-radius;
+@each $width, $widthValue in $border-widths {
+  .border-#{$width} {
+    border-width: #{$widthValue};
+  }
+}
+
+@each $radius, $radiusValue in $border-radii {
+  .rounded-#{$radius} {
+    border-radius: #{$radiusValue};
+  }
 }

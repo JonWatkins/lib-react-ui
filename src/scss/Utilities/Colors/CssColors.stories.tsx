@@ -60,7 +60,7 @@ export const BorderColor: Story = () => {
       {colors.map((color, colorIndex) => (
         <div
           key={colorIndex}
-          className={`border-${color} border-1 border-solid pxy-1 mb-1 f justify-center`}
+          className={`border-${color} border-1 border-solid p-1 mb-1 f justify-center`}
         >
           .border-{color}
         </div>
@@ -75,7 +75,7 @@ export const BackgroundColor: Story = () => {
   return (
     <div className="f f-col">
       {colors.map((color, colorIndex) => (
-        <div key={colorIndex} className={`bg-${color} pxy-1 mb-1`}>
+        <div key={colorIndex} className={`bg-${color} p-1 mb-1`}>
           <span className={`${inverseTextColor(color)} f justify-center`}>
             .bg-{color}
           </span>
@@ -95,7 +95,7 @@ export const Opacity: Story = () => {
       {opacities.map((opacity, opacityIndex) => (
         <div
           key={opacityIndex}
-          className={`bg-dark/${opacity} pxy-1 mb-1 f justify-center`}
+          className={`bg-dark/${opacity} p-1 mb-1 f justify-center`}
         >
           .bg-dark/{opacity}
         </div>
@@ -116,7 +116,7 @@ export const ColorPalette: Story = () => {
           </td>
           <td className="f grow-1">
             <div
-              className={`border-light border-1 border-solid bg-white grow-1 pxy-2`}
+              className={`border-light border-1 border-solid bg-white grow-1 p-2`}
             />
           </td>
         </tr>
@@ -132,7 +132,7 @@ export const ColorPalette: Story = () => {
                     <td className="f grow-1">
                       <div
                         key={weightIndex}
-                        className={`border-light border-1 border-solid bg-${color}-${weight} grow-1 pxy-2`}
+                        className={`border-light border-1 border-solid bg-${color}-${weight} grow-1 p-2`}
                       />
                     </td>
                   </tr>

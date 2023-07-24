@@ -45,7 +45,7 @@ export const ButtonWithHooks: Story = () => {
 ButtonWithHooks.args = {};
 
 export const AvailableSizes: Story = () => {
-  const sizes: ThemeSizes[] = ["tiny", "small", "medium", "large", "xl"];
+  const sizes: ThemeSizes[] = ["tiny", "small", "medium", "large"];
 
   return (
     <>

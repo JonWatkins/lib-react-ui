@@ -4,13 +4,6 @@
 @import "settings";
 @import "general";
 @import "image";
-@import "Input";
-@import "Select";
-@import "ListGroup";
-@import "Card";
-@import "Icon";
-@import "Grid";
-@import "Carousel";
 
 @import "./Utilities/Colors";
 @import "./Utilities/Borders";
@@ -18,3 +11,12 @@
 @import "./Utilities/Spacing";
 @import "./Utilities/Table";
 @import "./Utilities/Typography";
+
+@import "./Components/Button";
+@import "./Components/Input";
+@import "./Components/Select";
+@import "./Components/ListGroup";
+@import "./Components/Card";
+@import "./Components/Icon";
+@import "./Components/Grid";
+@import "./Components/Carousel";
