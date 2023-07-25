@@ -1,5 +1,9 @@
+.form-field {
+  @extend .position-relative;
+}
+
 label {
-  @extend .inline-block;
+  @extend .block;
   @extend .pb-0\.5;
 }
 
@@ -11,6 +15,8 @@ label {
   @extend .py-0\.25;
   @extend .px-0\.5;
   @extend .text-default;
+  @extend .border-box;
+  width:100%;
 
   &:focus {
     @extend .border-info-500;
