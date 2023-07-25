@@ -36,32 +36,11 @@ $light-colors: (
   "info",
 );
 
-$palette : (
-  100 : 40%,
-  200 : 30%,
-  300 : 20%,
-  400 : 10%,
-  500 : 0,
-  600 : 10%,
-  700 : 20%,
-  800 : 30%,
-  900 : 40%
-);
-
 $opacities: (
-  "100": 100%,
-  "75": -25%,
-  "50": -50%,
-  "25": -75%,
-);
-
-$light-colors: (
-  "primary",
-  "secondary",
-  "success",
-  "danger",
-  "warning",
-  "info",
+  100: 1,
+  75: 0.75,
+  50: 0.5,
+  25: 0.25,
 );
 
 $weights: (
@@ -76,16 +55,13 @@ $weights: (
   900: 40%,
 );
 
-$opacities: (
-  100: 1,
-  75: 0.75,
-  50: 0.5,
-  25: 0.25,
-);
-
 @mixin applyColorPalette($className, $property, $darkMode: false) {
   .#{$className}-white {
     #{$property}: $white;
+  }
+
+  .#{$className}-transparent {
+    #{$property}: transparent;
   }
 
   @each $color, $hex in $theme-colors {
@@ -94,15 +70,16 @@ $opacities: (
       $hoverClassName: if($darkMode, dark\:hover\:#{$className}, hover\:#{$className});
 
       .#{$classWithPrexix}-#{$color},
-        .#{$hoverClassName}-#{$color}:hover {
-          #{$property}: $hex;
+      .#{$hoverClassName}-#{$color}:hover {
+        #{$property}: $hex;
+      }
 
-          @each $opacity, $alpha in $opacities {
-            &\/#{$opacity} {
-              #{$property}: rgba($hex, $alpha);
-            }
-          }
+      @each $opacity, $alpha in $opacities {
+        .#{$classWithPrexix}-#{$color}\/#{$opacity},
+        .#{$hoverClassName}-#{$color}\/#{$opacity}:hover {
+          #{$property}: rgba($hex, $alpha);
         }
+      }
 
       @each $weight, $value in $weights {
         $background-color: if($weight < 500, lighten($hex, abs($value)), darken($hex, $value));
@@ -110,11 +87,12 @@ $opacities: (
         .#{$classWithPrexix}-#{$color}-#{$weight},
         .#{$hoverClassName}-#{$color}-#{$weight}:hover {
           #{$property}: $background-color;
+        }
 
-          @each $opacity, $alpha in $opacities {
-            &\/#{$opacity} {
-              #{$property}: rgba($background-color, $alpha);
-            }
+        @each $opacity, $alpha in $opacities {
+          .#{$classWithPrexix}-#{$color}-#{$weight}\/#{$opacity},
+          .#{$hoverClassName}-#{$color}-#{$weight}\/#{$opacity}:hover {
+            #{$property}: rgba($background-color, $alpha);
           }
         }
       }

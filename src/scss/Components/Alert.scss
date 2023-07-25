@@ -1,0 +1,23 @@
+@mixin alert-color($color, $hex) {
+  &-#{$color} {
+    @if ($color != "white") {
+      @extend .bg-#{$color}-500\/75;
+      @extend .border-#{$color}-700;
+    } @else {
+      @extend .bg-white;
+      @extend .border-light;
+    }
+    @include inverse-color('text', $color);
+  }
+}
+
+.alert {
+  @extend .rounded-medium;
+  @extend .border-1;
+  @extend .border-solid;
+  @extend .p-1;
+
+  @each $color, $hex in $theme-colors {
+    @include alert-color($color, $hex)
+  }
+}
