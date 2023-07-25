@@ -35,7 +35,7 @@ export type ThemeColorWeights =
 
 export type ThemeOpacities = "100" | "75" | "50" | "25";
 
-export type ThemeSizes = "tiny" | "small" | "medium" | "large" | "xl";
+export type ThemeSizes = "tiny" | "small" | "medium" | "large";
 
 export type ChildNodes = string | number | ReactNode | ReactNode[];
 

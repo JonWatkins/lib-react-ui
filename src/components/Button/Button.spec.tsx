@@ -7,10 +7,29 @@ import type { ThemeColors } from "../../globals";
 
 describe("Button", () => {
   it("should have default classes", () => {
-    render(<Button text="Hello World" />);
+    render(<Button />);
     const button = screen.getByRole("button");
+    expect(button).toHaveClass("btn");
     expect(button).toHaveClass("btn-primary");
     expect(button).toHaveAttribute("type", "button");
+  });
+
+  it("should have a default type", () => {
+    render(<Button />);
+    const button = screen.getByRole("button");
+    expect(button).toHaveAttribute("type", "button");
+  });
+
+  it("should be abele to set a type", () => {
+    render(<Button type="submit" />);
+    const button = screen.getByRole("button");
+    expect(button).toHaveAttribute("type", "submit");
+  });
+
+  it("should be abele to set the disabled state", () => {
+    render(<Button disabled={true} />);
+    const button = screen.getByRole("button");
+    expect(button).toHaveAttribute("disabled");
   });
 
   it("Should be able to render with text", () => {
@@ -31,6 +50,20 @@ describe("Button", () => {
     render(<Button className="pt-5" />);
     const button = screen.getByRole("button");
     expect(button).toHaveClass("pt-5");
+  });
+
+  it("should apply a default color if given something incorrect", () => {
+    // @ts-ignore
+    render(<Button color="brown" />);
+    const button = screen.getByRole("button");
+    expect(button).toHaveClass(`btn-primary`);
+  });
+
+  it("should apply a default size if given something incorrect", () => {
+    // @ts-ignore
+    render(<Button size="huge" />);
+    const button = screen.getByRole("button");
+    expect(button).toHaveClass(`btn-medium`);
   });
 
   global.colors.forEach((color) => {
