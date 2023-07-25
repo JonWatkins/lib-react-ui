@@ -18,13 +18,13 @@ const InputLabel: FC<InputLabelProps> = ({
   return (
     <label htmlFor={id} className={className}>
       {children}
-      {label}
+      <span>{label}</span>
     </label>
   );
 };
 
 const Field: FC<FieldProps> = ({ label, children }) => {
-  if (label) {
+  if (label === true) {
     return <div className="form-field">{children}</div>;
   }
 
@@ -51,7 +51,7 @@ const RenderInput: ForwardRefRenderFunction<
 
   if (type && ["checkbox", "radio"].indexOf(type) > -1) {
     return (
-      <div className="form-field">
+      <Field>
         <InputLabel className="checkbox-label" label={label}>
           <input
             ref={innerRef}
@@ -66,12 +66,12 @@ const RenderInput: ForwardRefRenderFunction<
             {...props}
           />
         </InputLabel>
-      </div>
+      </Field>
     );
   }
 
   return (
-    <Field label={typeof label === "string" && label.length > 1}>
+    <Field label={typeof label === "string" && label.length > 0}>
       <InputLabel label={label} />
       <input
         ref={innerRef}

@@ -1,11 +1,6 @@
 import "@testing-library/jest-dom";
 import React from "react";
-import {
-  render,
-  screen,
-  waitFor,
-  queryByAttribute,
-} from "@testing-library/react";
+import { render, screen, queryByAttribute } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { Input } from "./Input";
 
@@ -43,14 +38,32 @@ describe("Input", () => {
     const { nodeName, textContent } = dom.container.querySelector(
       "label"
     ) as HTMLElement;
+    const field = dom.container.querySelector(".form-field") as HTMLElement;
     expect(nodeName).toBe("LABEL");
     expect(textContent).toBe("Enter Your Email");
+    expect(field.nodeName).toBe("DIV");
   });
 
   it("should not render a label if not given", () => {
     const dom = render(<Input id="test-input" />);
     const label = dom.container.querySelector("label");
     expect(label).toEqual(null);
+  });
+
+  it("should not render a the field if label is not given", () => {
+    const dom = render(<Input id="test-input" />);
+    const label = dom.container.querySelector("label");
+    const field = dom.container.querySelector(".form-field");
+    expect(label).toEqual(null);
+    expect(field).toEqual(null);
+  });
+
+  it("should not render a the field if label length is > than 0", () => {
+    const dom = render(<Input id="test-input" label="" />);
+    const label = dom.container.querySelector("label");
+    const field = dom.container.querySelector(".form-field");
+    expect(label).toEqual(null);
+    expect(field).toEqual(null);
   });
 
   it("should be able to render a checkbox", () => {
