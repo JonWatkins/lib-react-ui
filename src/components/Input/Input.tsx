@@ -6,7 +6,7 @@ import React, {
 } from "react";
 
 import classNames from "classnames";
-import type { InputProps, InputLabelProps } from "./Input.types";
+import type { InputProps, InputLabelProps, FieldProps } from "./Input.types";
 
 const InputLabel: FC<InputLabelProps> = ({
   id,
@@ -21,6 +21,14 @@ const InputLabel: FC<InputLabelProps> = ({
       {label}
     </label>
   );
+};
+
+const Field: FC<FieldProps> = ({ label, children }) => {
+  if (label) {
+    return <div className="form-field">{children}</div>;
+  }
+
+  return <>{children}</>;
 };
 
 const RenderInput: ForwardRefRenderFunction<
@@ -63,7 +71,7 @@ const RenderInput: ForwardRefRenderFunction<
   }
 
   return (
-    <div className="form-field">
+    <Field label={typeof label === "string" && label.length > 1}>
       <InputLabel label={label} />
       <input
         ref={innerRef}
@@ -77,7 +85,7 @@ const RenderInput: ForwardRefRenderFunction<
         onChange={onChange}
         {...props}
       />
-    </div>
+    </Field>
   );
 };
 

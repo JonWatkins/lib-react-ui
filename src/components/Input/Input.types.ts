@@ -40,3 +40,8 @@ export interface InputLabelProps extends LRUIElement {
   children?: ChildNodes;
   className?: string;
 }
+
+export interface FieldProps extends LRUIElement {
+  label?: boolean;
+  children?: ChildNodes[];
+}

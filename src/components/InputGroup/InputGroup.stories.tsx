@@ -15,7 +15,7 @@ const meta: Meta<typeof InputGroup> = {
 export const Primary: Story = () => (
   <InputGroup>
     <Input />
-    <Button text="Search" />
+    <Button text="Search" size="small" />
   </InputGroup>
 );
 
