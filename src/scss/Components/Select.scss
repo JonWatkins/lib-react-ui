@@ -1,64 +1,73 @@
 .select-container {
-  text-align: left;
-  border: 1px solid #ccc;
-  position: relative;
-  border-radius: 5px;
+  @extend .position-relative;
+  @extend .rounded-small;
+  @extend .text-left;
+  @extend .border-1;
+  @extend .border-solid;
+  @extend .border-light-500;
+}
+
+.select-selected-value {
+  @extend .grow-1;
 }
 
 .select-input {
-  padding: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  user-select: none;
+  @extend .flex;
+  @extend .p-0\.5;
+  @extend .align-center;
+  @extend .justify-between;
+  @extend .user-select-none;
 }
 
 .select-menu {
-  position: absolute;
+  @extend .position-absolute;
+  @extend .border-1;
+  @extend .border-solid;
+  @extend .border-light-500;
+  @extend .rounded-small;
+  @extend .bg-white;
+  @extend .overflow-auto;
   transform: translateY(4px);
   width: 100%;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  overflow: auto;
   max-height: 150px;
-  background-color: #fff;
 }
 
 .select-menu-item {
-  padding: 5px;
-  cursor: pointer;
+  @extend .cursor-pointer;
+  @extend .p-0\.5;
 }
 
 .select-menu-item:hover {
-  background-color: #9fc3f870;
+  @extend .bg-light;
 }
 
-.select-menu-item.selected {
-  background-color: #0d6efd;
-    color: #fff;
+.select-menu-item.selected,
+.select-menu-item.selected:hover {
+  @extend .bg-primary;
+  @extend .text-white;
 }
 
 .select-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
+  @extend .flex;
+  @extend .f-wrap;
 }
 
 .select-tag-item {
-  background-color: #ddd;
-  padding: 2px 4px;
-  border-radius: 2px;
-  display: flex;
-  align-items: center;
+  @extend .bg-light;
+  @extend .rounded-small;
+  @extend .flex;
+  @extend .align-center;
+  @extend .px-0\.5;
+  @extend .py-0\.25;
+  @extend .mr-0\.25;
 }
 
 .select-tag-close {
-  display: flex;
-  align-items: center;
+  @extend .flex;
+  @extend .align-center;
 }
 
 .select-search {
-  padding: 5px;
-  background-color: #eee;
+  @extend .p-0\.5;
+  @extend .bg-light;
 }
-

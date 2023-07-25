@@ -1,0 +1,20 @@
+// Define user-select values in a map
+$user-select-values: (
+  none,
+  auto,
+  text,
+  contain,
+  all,
+  inherit,
+  initial,
+  revert,
+  revert-layer,
+  unset
+);
+
+// Loop through the map to generate utility classes
+@each $user-select in $user-select-values {
+  .user-select-#{$user-select} {
+    user-select: $user-select;
+  }
+}

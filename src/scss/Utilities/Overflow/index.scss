@@ -1,0 +1,14 @@
+// Define overflow values in a map
+$overflow-values: (
+  visible,
+  hidden,
+  scroll,
+  auto
+);
+
+// Loop through the map to generate utility classes
+@each $overflow in $overflow-values {
+  .overflow-#{$overflow} {
+    overflow: $overflow;
+  }
+}

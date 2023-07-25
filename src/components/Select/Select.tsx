@@ -155,10 +155,8 @@ export const Select: FC<SelectProps> = ({
       })}
       {...props}
     >
-      <div className="select-input">
-        <div onClick={handleInputClick} className="select-selected-value">
-          {getDisplay()}
-        </div>
+      <div className="select-input" onClick={handleInputClick}>
+        <div className="select-selected-value">{getDisplay()}</div>
         <div className="select-dropdown">
           <div className="select-tool">
             <Icon type="down-micro" size="small" />
