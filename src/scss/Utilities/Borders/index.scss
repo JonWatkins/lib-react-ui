@@ -21,6 +21,13 @@ $border-widths: (
   "5": 5px,
 );
 
+$border-sides: (
+  "top",
+  "left",
+  "right",
+  "bottom"
+);
+
 // Define your border radius options
 $border-radii: (
   "none": 0,
@@ -31,21 +38,49 @@ $border-radii: (
   "full": 9999px, // Use a large value for a circle
 );
 
+
+$border-radius-directions: (
+  "top-left",
+  "top-right",
+  "bottom-left",
+  "bottom-right"
+);
+
 // Mixin to generate utility classes
 @each $style, $value in $border-styles {
   .border-#{$style} {
     border-style: #{$value};
   }
+
+  @each $side in $border-sides {
+    .border-#{$side}-#{$style} {
+      border-#{$side}-style: #{$value};
+    }
+  }  
 }
 
 @each $width, $widthValue in $border-widths {
   .border-#{$width} {
     border-width: #{$widthValue};
   }
+
+  @each $side in $border-sides {
+    .border-#{$side}-#{$width} {
+      border-#{$side}-width: #{$widthValue};
+    }
+  }
 }
 
 @each $radius, $radiusValue in $border-radii {
   .rounded-#{$radius} {
     border-radius: #{$radiusValue};
+  }
+
+  @each $size, $size-value in $border-radii {
+    @each $direction in $border-radius-directions {
+      .rounded-#{$direction}-#{$size} {
+        border-#{$direction}-radius: $size-value;
+      }
+    }
   }
 }
