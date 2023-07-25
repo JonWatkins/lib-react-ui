@@ -1,9 +1,6 @@
 @import "~normalize.css/normalize";
 @import "~rfs/scss";
-
 @import "settings";
-@import "general";
-@import "image";
 
 @import "./Utilities/Colors";
 @import "./Utilities/Borders";
@@ -12,8 +9,10 @@
 @import "./Utilities/Table";
 @import "./Utilities/Typography";
 @import "./Utilities/Cursor";
+@import "./Utilities/Display";
 
 @import "./Components/Alert";
+@import "./Components/Badge";
 @import "./Components/Button";
 @import "./Components/Input";
 @import "./Components/Select";

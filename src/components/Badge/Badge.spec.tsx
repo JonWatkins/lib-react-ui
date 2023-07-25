@@ -12,7 +12,7 @@ describe("Badge", () => {
     const dom = render(<Badge id="test-badge" />);
     const badge = getById(dom.container, "test-badge");
     expect(badge).toHaveClass("badge");
-    expect(badge).toHaveClass("badge-info");
+    expect(badge).toHaveClass("badge-primary");
     expect(badge).toHaveClass("badge-medium");
   });
 
@@ -34,7 +34,7 @@ describe("Badge", () => {
 
   global.sizes.forEach((size) => {
     it(`should be able to set the size of the Badge to ${size}`, () => {
-      const dom = render(<Badge id="test-badge" color={size} />);
+      const dom = render(<Badge id="test-badge" size={size} />);
       const badge = getById(dom.container, "test-badge");
       expect(badge).toHaveClass(`badge-${size}`);
     });

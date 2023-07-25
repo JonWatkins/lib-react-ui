@@ -1,0 +1,39 @@
+@mixin badge-color($color, $hex) {
+  &-#{$color} {
+    @extend .bg-#{$color};
+    @extend .border-#{$color};
+    @include inverse-color('text', $color);
+  }
+}
+
+@mixin badge-size($size) {
+  &-#{$size} {
+    @if ($size == "tiny") {
+      @extend .text-tiny;
+      @extend .px-0\.5;
+    } @else if ($size == "small") {
+      @extend .text-small;
+      @extend .px-0\.5;
+    } @else if ($size == "medium") {
+      @extend .text-default;
+      @extend .px-0\.5;
+    } @else if ($size == "large") {
+      @extend .text-large;
+      @extend .px-0\.75;
+    }
+  }
+}
+
+.badge {
+  @extend .rounded-medium;
+  @extend .py-0\.25;
+  @extend .inline-block;
+
+  @each $size in $theme-sizes {
+    @include badge-size($size);
+  }
+
+  @each $color, $hex in $theme-colors {
+    @include badge-color($color, $hex)
+  }
+}
