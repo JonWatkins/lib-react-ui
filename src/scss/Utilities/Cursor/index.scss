@@ -1,0 +1,18 @@
+// Define the cursor utilities
+$cursor-utilities: (
+  'auto': auto,
+  'default': default,
+  'pointer': pointer,
+  'wait': wait,
+  'text': text,
+  'move': move,
+  'not-allowed': not-allowed,
+  // Add more cursor utilities here as needed
+);
+
+// Generate the cursor utility classes
+@each $name, $value in $cursor-utilities {
+  .cursor-#{$name} {
+    cursor: $value;
+  }
+}

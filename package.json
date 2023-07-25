@@ -19,7 +19,8 @@
   "author": "Jon Watkins",
   "license": "MIT",
   "files": [
-    "dist"
+    "dist",
+    "src/scss"
   ],
   "peerDependencies": {
     "react": "^18.2.0",

@@ -22,7 +22,7 @@ $sizes:(
     } @else if ($size == "large") {
       @extend .text-large;
       @extend .px-1\.5;
-      @extend .py-1;
+      @extend .py-0\.75;
     }
   }
 }
@@ -44,6 +44,7 @@ $sizes:(
 }
 
 .btn {
+  @extend .cursor-pointer;
   @extend .rounded-medium;
   @extend .border-1;
   @extend .border-solid;

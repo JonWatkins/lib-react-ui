@@ -1,4 +1,4 @@
-global.sizes = ["sm", "md", "lg"];
+global.sizes = ["small", "medium", "large"];
 
 global.colors = [
   "primary",
