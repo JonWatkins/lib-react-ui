@@ -1,33 +1,31 @@
-.form-field {
-  label {
-    @extend .inline-block;
-    @extend .pb-0\.5;
+label {
+  @extend .inline-block;
+  @extend .pb-0\.5;
+}
+
+.form-control {
+  @extend .inline-block;
+  @extend .border-1;
+  @extend .border-light-500;
+  @extend .rounded-small;
+  @extend .py-0\.25;
+  @extend .px-0\.5;
+  @extend .text-default;
+
+  &:focus {
+    @extend .border-info-500;
+    @extend .outline-none;
   }
 
+  &:disabled {
+    @extend .cursor-not-allowed;
+  }
+}
+
+.checkbox-label {
   .form-control {
-    @extend .block;
-    @extend .border-1;
-    @extend .border-light-500;
-    @extend .rounded-small;
-    @extend .py-0\.25;
-    @extend .px-0\.5;
-    @extend .text-default;
-
-    &:focus {
-      @extend .border-info-500;
-      @extend .outline-none;
-    }
-
-    &:disabled {
-      @extend .cursor-not-allowed;
-    }
-  }
-
-  .checkbox-label {
-    .form-control {
-      @extend .inline;
-      @extend .pr-0\.5;
-      width: auto;
-    }
+    @extend .inline;
+    @extend .pr-0\.5;
+    width: auto;
   }
 }
