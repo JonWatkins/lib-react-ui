@@ -1,0 +1,15 @@
+// Define position values in a map
+$positions: (
+  static,
+  relative,
+  absolute,
+  fixed,
+  sticky
+);
+
+// Loop through the map to generate utility classes
+@each $position in $positions {
+  .position-#{$position} {
+    position: $position;
+  }
+}
