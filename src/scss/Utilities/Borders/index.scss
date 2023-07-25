@@ -84,3 +84,30 @@ $border-radius-directions: (
     }
   }
 }
+
+$outline-widths: (
+  thin: 1px,
+  medium: 2px,
+  thick: 4px
+);
+
+// Define outline style values in a map
+$outline-styles: (
+  solid,
+  dashed,
+  dotted,
+  double
+);
+
+.outline-none {
+  outline: 0;
+}
+
+// Loop through the maps to generate utility classes
+@each $width, $width-value in $outline-widths {
+  @each $style in $outline-styles {
+    .outline-#{$style}-#{$width} {
+      outline: $width-value $style;
+    }
+  }
+}
