@@ -1,6 +1,5 @@
 import type { StorybookConfig } from "@storybook/react-webpack5";
 import sass from "sass";
-
 const config: StorybookConfig = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
   addons: [
@@ -15,6 +14,7 @@ const config: StorybookConfig = {
         },
       },
     },
+    "@storybook/addon-mdx-gfm",
   ],
   framework: {
     name: "@storybook/react-webpack5",
