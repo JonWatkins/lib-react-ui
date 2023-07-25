@@ -31,7 +31,7 @@ label {
 .checkbox-label {
   .form-control {
     @extend .inline;
-    @extend .pr-0\.5;
+    @extend .mr-0\.5;
     width: auto;
   }
 }
