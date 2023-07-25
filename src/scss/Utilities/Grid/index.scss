@@ -1,0 +1,181 @@
+// Grid Display type
+$grid-display: (
+    "grid": grid,
+    "inline-grid": inline-grid,
+);
+
+@each $type, $value in $grid-display {
+    .#{$type} {
+        display: $value;
+    }
+}
+
+// Grid-template-columns
+$columns: 12;
+
+@for $i from 1 through $columns {
+    .grid-col-#{i} {
+        grid-template-columns: repeat($i, minmax(0, 1fr))
+    }
+}
+
+// Grid-template-rows
+$rows: 6;
+
+@for $i from 1 through $rows {
+    .grid-row-#{i} {
+        grid-template-rows: repeat($i, minmax(0, 1fr))
+    }
+}
+
+// Grid-column-start + Grid-column-end
+$start-end: 13;
+$grid-col-start-end: (
+    "start": start,
+    "end": end,
+    "auto": auto,
+);
+
+@each $type, $value in $grid-col-start-end {
+    @if ($type == 'start') {
+        @for $i from 1 through $start-end {
+            .col-#{$value}-#{$i} {
+                grid-column-start: $i;
+            }
+            .row-#{$value}-#{$i} {
+                grid-row-start: $i
+            }
+        }
+    }
+    @else if ($type == 'end') {
+        @for $i from 1 through $start-end {
+            .col-#{$type}-#{$i} {
+                grid-column-end: $i;
+            }
+            .row-#{$type}-#{$i} {
+                grid-row-end: $i;
+            }
+        }
+    } @else {
+        .col-start-auto {
+            grid-column-start: auto;
+        }
+        .col-end-auto {
+            grid-column-end: auto;
+        }
+        .row-start-auto {
+            grid-row-start: auto;
+        }
+        .row-end-auto {
+            grid-row-end: auto;
+        }
+    }
+}
+
+// Grid-column
+$col-span: 12;
+
+@for $i from 1 through $col-span {
+    .col-span-#{i} {
+        grid-column: span $i / span $i;
+    }
+    .row-span-#{i} {
+        grid-row: span $i / span $i;
+    }
+}
+.col-span-full {
+    grid-column: 1 / -1;
+}
+.row-span-full {
+    grid-row: 1 / -1;
+}
+
+// Grid-auto-flow
+$grid-flow: (
+    "row": row,
+    "column": column,
+    "dense": dense,
+    "row-dense": row dense,
+    "col-dense": column dense,
+);
+
+@each $type, $value in $grid-flow {
+    .grid-flow-#{type} {
+        grid-auto-flow: $value
+    }
+}
+
+// Grid-auto-columns + Grid-auto-rows
+$grid-auto: (
+    "auto": auto,
+    "min": min-content,
+    "max": max-content,
+    "1": 1fr
+);
+
+@each $type, $value in $grid-auto {
+    @if ($type == '1') {
+        .cols-auto-#{type} {
+            grid-auto-columns: minmax(0, $value)
+        }
+        .rows-auto-#{type} {
+            grid-auto-rows: minmax(0, $value)
+        }
+    } @else {
+        .cols-auto-#{$type} {
+            grid-auto-columns: $value;
+        }
+        .rows-auto-#{$type} {
+            grid-auto-rows: $value;
+        }
+    }
+}
+
+// Gap + Row-gap + Column-gap
+@function str-replace($string, $search, $replace: '') {
+    $index: str-index($string, $search);
+
+    @if $index {
+        @return str-slice($string, 1, $index - 1)+$replace +str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    }
+
+    @return $string;
+}
+$gaps: (
+    "gap": gap,
+    "row-gap": row-gap,
+    "col-gap": column-gap,
+);
+
+@for $i from 0 through 100 {
+    $size: calc($i * 0.25);
+    $remValue: ($size * 1rem);
+    $escapedStr: str-replace($size + '', '.', \.);
+    @each $type, $value in $gaps {
+        @if ($type == "gap") {
+            .gap-#{$escapedStr} {
+                gap: $remValue;
+            }
+        }
+        @if ($type == "row-gap") {
+            .row-gap-#{$escapedStr} {
+                row-gap: $remValue;
+            }
+        }
+        @if ($type == "col-gap") {
+            .col-gap-#{$escapedStr} {
+                column-gap: $remValue;
+            }
+        }
+    }
+}
+
+.gap-px {
+    gap: 1px;
+}
+.row-gap-px {
+    row-gap: 1px;
+}
+.col-gap-px {
+    column-gap: 1px;
+}
