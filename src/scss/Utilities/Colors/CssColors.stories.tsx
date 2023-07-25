@@ -1,6 +1,5 @@
 import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
-import { inverseTextColor } from "../../../utils";
 import type {
   ThemeColors,
   ThemeColorWeights,
@@ -76,9 +75,7 @@ export const BackgroundColor: Story = () => {
     <div className="f f-col">
       {colors.map((color, colorIndex) => (
         <div key={colorIndex} className={`bg-${color} p-1 mb-1`}>
-          <span className={`${inverseTextColor(color)} f justify-center`}>
-            .bg-{color}
-          </span>
+          <span className={`f justify-center`}>.bg-{color}</span>
         </div>
       ))}
     </div>
