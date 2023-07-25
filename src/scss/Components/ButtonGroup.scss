@@ -1,0 +1,20 @@
+.btn-group {
+  > {
+    :first-child {
+      @extend .rounded-top-right-none;
+      @extend .rounded-bottom-right-none;
+    }
+
+    :not(:first-child):not(:last-child) {
+      @extend .rounded-top-right-none;
+      @extend .rounded-top-left-none;
+      @extend .rounded-bottom-right-none;
+      @extend .rounded-bottom-left-none;
+    }
+
+    :last-child {
+      @extend .rounded-top-left-none;
+      @extend .rounded-bottom-left-none;
+    }
+  }
+}
